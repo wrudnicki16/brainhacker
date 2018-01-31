@@ -12,7 +12,7 @@ class Greeting extends React.Component {
     if (currentUser) {
       return (
         <div className="nav-greeting">
-          <p>Welcome, {`${currentUser.user.username}`}</p>
+          <p>Hi, {`${currentUser.username}`}</p>
           <button onClick={() => logout()}>Logout</button>
         </div>
       );

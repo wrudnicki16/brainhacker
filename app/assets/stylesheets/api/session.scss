@@ -8,6 +8,11 @@
   a {
     text-decoration: none;
     margin: 35px;
+    color: #fff;
+  }
+
+  a:hover {
+    color: #2aadad;
   }
 
   button {
@@ -21,18 +26,19 @@
   }
 
   button:hover {
-
+    background-color: #2b9292;
   }
 }
 
 header {
+  background-color: #333;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   h1 {
-    display: inline-block;
-    font-size: 3em;
-    margin: auto 0;
+    color: #fff;
+    font-size: 2em;
+    margin: 0 20px;
   }
 }
