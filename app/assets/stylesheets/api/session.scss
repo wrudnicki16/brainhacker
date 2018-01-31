@@ -2,9 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .nav-greeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   a {
     text-decoration: none;
-    padding: 30px;
+    margin: 35px;
+  }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    margin: 35px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #2aadad;
+    border: 1px solid #1faeae;
+  }
+
+  button:hover {
+
   }
 }
 
@@ -12,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   h1 {
     display: inline-block;
     font-size: 3em;

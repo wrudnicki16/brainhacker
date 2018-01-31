@@ -1,22 +1,22 @@
 import React from 'react';
-import { signup, login, logout } from '../util/session_api_util';
+import * as SessionAPIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 
-export const loginAction = user => dispatch => {
-  return login(user)
+export const login = user => dispatch => {
+  return SessionAPIUtil.login(user)
           .then(user1 => dispatch(receiveCurrentUser(user1)));
 };
 
-export const logoutAction = () => dispatch => {
-  return logout()
+export const logout = () => dispatch => {
+  return SessionAPIUtil.logout()
           .then(user1 => dispatch(receiveCurrentUser(user1)));
 };
 
-export const signupAction = user => dispatch => {
-  return signup(user)
+export const signup = user => dispatch => {
+  return SessionAPIUtil.signup(user)
           .then(user1 => dispatch(receiveCurrentUser(user1)));
 };
 
