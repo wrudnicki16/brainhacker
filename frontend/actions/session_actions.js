@@ -5,17 +5,17 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 
-export const login1 = user => dispatch => {
+export const loginAction = user => dispatch => {
   return login(user)
           .then(user1 => dispatch(receiveCurrentUser(user1)));
 };
 
-export const logout1 = () => dispatch => {
+export const logoutAction = () => dispatch => {
   return logout()
           .then(user1 => dispatch(receiveCurrentUser(user1)));
 };
 
-export const signup1 = user => dispatch => {
+export const signupAction = user => dispatch => {
   return signup(user)
           .then(user1 => dispatch(receiveCurrentUser(user1)));
 };

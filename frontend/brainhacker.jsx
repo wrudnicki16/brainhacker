@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './util/session_api_util';
+import Root from './components/root.jsx';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,5 +13,5 @@ document.addEventListener("DOMContentLoaded", () => {
   window.signup = signup;
   window.logout = logout;
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Welcome to Brainhacker!</h1>, root);
+  ReactDOM.render(<Root store={ store }/>, root);
 });
