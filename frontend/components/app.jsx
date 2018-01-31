@@ -4,7 +4,7 @@ import GreetingContainer from './greeting/greeting_container';
 const App = () => (
   <div>
     <header>
-      <h1>Welcome to Brainhacker!</h1>
+      <h1>Brainhacker</h1>
       <GreetingContainer />
     </header>
   </div>
