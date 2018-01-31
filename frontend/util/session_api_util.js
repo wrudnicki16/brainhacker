@@ -13,7 +13,6 @@ export const login = (user) => {
   });
 };
 export const logout = () => {
-  console.log("hi");
   return $.ajax({
     method: "DELETE",
     url: "/api/session",
