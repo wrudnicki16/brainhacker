@@ -13,16 +13,17 @@ class SessionForm extends React.Component {
     };
   }
 
+  componentWillReceiveProps() {
+    this.props.history.push("/");
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = merge({}, this.state);
-    console.log(user);
-    console.log("state!", this.state);
     this.props.processForm(user);
     this.setState(() => {
       return {user: { username: "", password: ""}};
     });
-    console.log("state again!", this.state);
   }
 
   handleChange(e) {

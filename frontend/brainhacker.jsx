@@ -7,6 +7,7 @@ import Root from './components/root.jsx';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
+
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.login = login;

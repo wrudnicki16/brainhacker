@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
 import { Route } from 'react-router';
+import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
@@ -9,9 +10,8 @@ const App = () => (
       <h1>Brainhacker</h1>
       <GreetingContainer />
     </header>
-
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <AuthRoute path="/login" component={SessionFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
   </div>
 );
 

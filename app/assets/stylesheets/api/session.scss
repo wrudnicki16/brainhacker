@@ -5,10 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: #fafafa;
   a {
     text-decoration: none;
-    margin: 35px;
-    color: #fff;
+    margin: 0 35px;
+    color: #fafafa;
   }
 
   a:hover {
@@ -18,8 +19,8 @@
   button {
     padding: 10px;
     cursor: pointer;
-    margin: 35px;
-    color: #fff;
+    margin: 0 35px;
+    color: #fdfdfd;
     border-radius: 5px;
     border: 1px solid #2aadad;
     background-color: #2aadad;
@@ -36,10 +37,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 35px;
 
   h1 {
-    color: #fff;
+    color: #fafafa;
     font-size: 2em;
-    margin: 0 20px;
+    margin: 0 35px;
   }
 }

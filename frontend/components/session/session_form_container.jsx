@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("state",state);
-  console.log("ownProps!!!", ownProps);
   let path = ownProps.location.pathname;
   return {
     loggedIn: state.currentUser ? true : false,
