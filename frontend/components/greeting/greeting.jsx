@@ -3,11 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Greeting extends React.Component {
 
-  handleLogout(e) {
-    this.props.logout();
-    this.props.history.push("/login");
-  }
-
   render() {
     let currentUser = this.props.currentUser;
     let logout = this.props.logout;
@@ -15,7 +10,7 @@ class Greeting extends React.Component {
       return (
         <div className="nav-greeting">
           <p>Hi, {`${currentUser.username}`}</p>
-          <button onClick={(e) => this.handleLogout(e)}>Logout</button>
+          <button onClick={() => logout()}>Logout</button>
         </div>
       );
     } else {
@@ -29,4 +24,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default withRouter(Greeting);
+export default Greeting;

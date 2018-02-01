@@ -29,7 +29,6 @@ export const signup = user => dispatch => {
 };
 
 export const receiveCurrentUser = (currentUser) => {
-  console.log('currentUser in action', currentUser);
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser

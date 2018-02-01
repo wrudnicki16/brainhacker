@@ -13,9 +13,9 @@ class SessionForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps() {
-    this.props.history.push("/");
-  }
+  // componentWillReceiveProps() {
+  //   this.props.history.push("/");
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
