@@ -12,10 +12,13 @@ class SessionForm extends React.Component {
       }
     };
   }
-
   // componentWillReceiveProps() {
   //   this.props.history.push("/");
   // }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -36,6 +39,19 @@ class SessionForm extends React.Component {
       this.setState(merge({}, this.state, {user: { password: password }}));
     }
   }
+  renderErrors() {
+    console.log(this.props);
+    console.log(this.props.errors);
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
 
   render() {
@@ -43,7 +59,7 @@ class SessionForm extends React.Component {
     if (this.props.loggedIn) {
       path.replace("/");
     } else {
-      if (path === "/login"){
+      if (path === "/login" || path ==="/"){
         return (
           <div className="login-form-container">
             <div className="login-page-header">
@@ -51,7 +67,8 @@ class SessionForm extends React.Component {
               <p>Study faster, remember longer.</p>
               <p>Experience the bliss of comprehension.</p>
             </div>
-            <form onSubmit={(e) => this.handleSubmit(e)} className="">
+            <form onSubmit={(e) => this.handleSubmit(e)}>
+              {this.renderErrors()}
               <h1>Login</h1>
                 <input type="text"
                   onChange={(e) => this.handleChange(e)}
@@ -77,6 +94,7 @@ class SessionForm extends React.Component {
               <p>Experience the bliss of comprehension.</p>
             </div>
             <form onSubmit={(e) => this.handleSubmit(e)}>
+              {this.renderErrors()}
               <h1>Sign Up</h1>
                 <input type="text"
                   onChange={(e) => this.handleChange(e)}
@@ -89,7 +107,7 @@ class SessionForm extends React.Component {
                   placeholder="Password"
                   className="login-input" />
               <input type="submit" value="Sign Up" />
-              <p>Already a user? <Link to="/logout">Login</Link></p>
+              <p>Already a user? <Link to="/login">Login</Link></p>
             </form>
           </div>
         );
