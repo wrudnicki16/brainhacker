@@ -27,6 +27,7 @@ class SessionForm extends React.Component {
   }
 
   handleChange(e) {
+    e.preventDefault();
     if (e.target.type === "text") {
       let username = e.target.value;
       this.setState(merge({}, this.state, {user: { username: username }}));
@@ -44,35 +45,52 @@ class SessionForm extends React.Component {
     } else {
       if (path === "/login"){
         return (
-          <div>
-            <h1>Login</h1>
+          <div className="login-form-container">
+            <div className="login-page-header">
+              <h1>Join the team</h1>
+              <p>Study faster, remember longer.</p>
+              <p>Experience the bliss of comprehension.</p>
+            </div>
             <form onSubmit={(e) => this.handleSubmit(e)} className="">
-              <label>Username:
-                <input onChange={(e) => this.handleChange(e)} type="text" value={this.state.user.username} />
-              </label>
-              <label>Password:
-                <input onChange={(e) => this.handleChange(e)} type="password" value={this.state.user.password} />
-              </label>
+              <h1>Login</h1>
+                <input type="text"
+                  onChange={(e) => this.handleChange(e)}
+                  value={this.state.user.username}
+                  placeholder="Username"
+                  className="login-input" />
+                <input type="password"
+                  onChange={(e) => this.handleChange(e)}
+                  value={this.state.user.password}
+                  placeholder="Password"
+                  className="login-input" />
               <input type="submit" value="Login" />
+              <p>Not signed up? <Link to="/signup">Sign up</Link></p>
             </form>
-            <p><Link to="/signup">Sign up</Link></p>
           </div>
         );
       } else {
         return (
-          <div>
-            <h1>Sign Up</h1>
+          <div className="login-form-container">
+            <div className="login-page-header">
+              <h1>Join the team</h1>
+              <p>Study faster, remember longer.</p>
+              <p>Experience the bliss of comprehension.</p>
+            </div>
             <form onSubmit={(e) => this.handleSubmit(e)}>
-              <label>Username:
-                <input onChange={(e) => this.handleChange(e)} type="text" value={this.state.user.username} />
-              </label>
-              <label>Password:
-                <input onChange={(e) => this.handleChange(e)} type="password" value={this.state.user.password} />
-              </label>
-              // Add an email!
+              <h1>Sign Up</h1>
+                <input type="text"
+                  onChange={(e) => this.handleChange(e)}
+                  value={this.state.user.username}
+                  placeholder="Username"
+                  className="login-input" />
+                <input type="password"
+                  onChange={(e) => this.handleChange(e)}
+                  value={this.state.user.password}
+                  placeholder="Password"
+                  className="login-input" />
               <input type="submit" value="Sign Up" />
+              <p>Already a user? <Link to="/logout">Login</Link></p>
             </form>
-            <p><Link to="/signup">Login</Link></p>
           </div>
         );
       }

@@ -9,13 +9,17 @@ import DeckIndexSidebar from './deck/deck_index_sidebar';
 const App = () => (
   <div>
     <header>
-      <h1>Brainhacker</h1>
+      <div className="nav-logo">
+        <div className="nav-logo-img"></div>
+        <h1>Brainhacker</h1>
+      </div>
       <GreetingContainer />
     </header>
-
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
-    <ProtectedRoute path="/decks" component={DeckIndexSidebar} />
+    <div className="login-page">
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <ProtectedRoute path="/decks" component={DeckIndexSidebar} />
+    </div>
   </div>
 );
 
