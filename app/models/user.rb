@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :decks,
+  primary_key: :id,
+  foreign_key: :creator_id,
+  class_name: :User
   # associations
 
   def self.generate_session_token

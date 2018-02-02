@@ -7,3 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create([{username: "Demo", password: "password"}]);
+
+decks = Deck.create([
+  { title: "Psychology", creator_id: 1 }
+]);
