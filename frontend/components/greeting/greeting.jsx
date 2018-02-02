@@ -9,6 +9,7 @@ class Greeting extends React.Component {
     if (currentUser) {
       return (
         <div className="nav-greeting">
+          <Link onClick={() => logout()} to="/logout">Login</Link>
           <p>Hi, {`${currentUser.username}`}</p>
           <button onClick={() => logout()}>Logout</button>
         </div>

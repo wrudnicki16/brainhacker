@@ -7,7 +7,6 @@
   justify-content: space-around;
   color: #fafafa;
   a {
-    text-decoration: none;
     margin: 0 35px;
     color: #fafafa;
   }
@@ -38,13 +37,18 @@
   align-items: center;
   justify-content: space-between;
   color: #fafafa;
-
+  a {
+    text-decoration: none;
+  }
 }
 .nav-logo-img {
   background-image: image_url("brain_hacking.png");
   height: 53px;
   width: 53px;
   background-size: cover;
+  text-decoration: none;
+
+
 }
 
 header {
@@ -94,10 +98,13 @@ header {
 
     form {
       align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 25vh;
       background-color: #272829;
       color: #c3c3c3;
-      padding: 20px;
+      padding: 30px;
       border-radius: 5px;
     }
     .login-input {
@@ -106,7 +113,7 @@ header {
       border-radius: 5px;
       border: 1px solid rgba(0, 0, 0, 0.65);
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 13px;
       background-color: rgba(0, 0, 0, 0.65);
 
       vertical-align: middle;
@@ -117,7 +124,8 @@ header {
       transition-duration: 0.3s;
       -webkit-transition-property: box-shadow;
       transition-property: box-shadow;
-      width: 7.32em;
+      width: 90%;
+      padding: 10px;
       height: 20px;
     }
     .login-input:focus,
@@ -128,8 +136,9 @@ header {
 
     input[type="submit"] {
       cursor: pointer;
-      margin-right: 20px;
-      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      margin-top: 13px;
       color: #c3c3c3;
       font-size: 18px;
       border-radius: 5px;
@@ -169,7 +178,7 @@ header {
 
     ul {
       margin: 0;
-      padding: 0;
+      padding: 5px;
       font-size: xx-small;
     }
   }

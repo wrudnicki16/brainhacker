@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
   // }
 
   componentWillUnmount() {
+    console.log("hi");
     this.props.clearErrors();
   }
 
@@ -52,6 +53,14 @@ class SessionForm extends React.Component {
     }
   }
 
+  navLink() {
+    if (this.props.formType === 'login') {
+      return <Link to="/signup">Sign up</Link>;
+    } else {
+      return <Link to="/login">Login</Link>;
+    }
+  }
+
   handleDemoUser() {
     const user = { user: { username: "Demo", password: "password" }};
     this.props.login(user);
@@ -60,6 +69,7 @@ class SessionForm extends React.Component {
 
   render() {
     let path = this.props.location.pathname;
+    console.log(this.props.clearErrors);
     if (this.props.loggedIn) {
       path.replace("/");
     } else {
@@ -90,7 +100,7 @@ class SessionForm extends React.Component {
               <input type="submit"
                 onClick={() => this.handleDemoUser()}
                 value="Demo"/>
-              <p>Not signed up? <Link to="/signup">Sign up</Link></p>
+              <p>Not signed up? <Link onClick={this.props.clearErrors} to="/signup">Sign up</Link></p>
             </form>
           </div>
         );
@@ -121,7 +131,7 @@ class SessionForm extends React.Component {
               <input type="submit"
                 onClick={() => this.handleDemoUser()}
                 value="Demo"/>
-              <p>Already a user? <Link to="/login">Login</Link></p>
+              <p>Already a user? <Link onClick={this.props.clearErrors} to="/login">Login</Link></p>
             </form>
           </div>
         );
