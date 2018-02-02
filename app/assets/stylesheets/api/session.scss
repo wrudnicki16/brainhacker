@@ -9,6 +9,7 @@
   a {
     margin: 0 35px;
     color: #fafafa;
+    text-decoration: none;
   }
 
   a:hover {
@@ -57,8 +58,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 3px 35px;
-
   h1 {
+    align-self: center;
     color: #fafafa;
     font-size: 2em;
     margin: 0 20px;
@@ -73,7 +74,8 @@ header {
   }
 
   p {
-    margin-left: 2vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
 }
