@@ -39,8 +39,6 @@ class SessionForm extends React.Component {
     }
   }
   renderErrors() {
-    console.log(this.props);
-    console.log(this.props.errors);
     if (this.props.errors) {
       return(
         <ul>
@@ -50,7 +48,7 @@ class SessionForm extends React.Component {
             </li>
           ))}
         </ul>
-      );      
+      );
     }
   }
 
