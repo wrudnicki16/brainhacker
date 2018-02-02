@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
+import { fetchDeck, fetchDecks, createDeck, removeDeck } from './util/decks_api_util.js';
 import Root from './components/root.jsx';
 
 
@@ -15,13 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
-
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.login = login;
-  window.signup = signup;
-  window.logout = logout;
+  window.fetchDeck = fetchDeck;
+  window.fetchDecks = fetchDecks;
+  window.createDeck = createDeck;
+  window.removeDeck = removeDeck;
+
+
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
