@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
-import { fetchDeck, fetchDecks, createDeck, removeDeck } from './util/decks_api_util.js';
+import { fetchDeck, createDeck, removeDeck } from './util/deck_api_util.js';
+import { fetchDecks } from './actions/deck_actions';
 import Root from './components/root.jsx';
 
 
