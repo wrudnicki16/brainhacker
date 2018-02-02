@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { merge } from 'lodash';
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -42,15 +41,22 @@ class SessionForm extends React.Component {
   renderErrors() {
     console.log(this.props);
     console.log(this.props.errors);
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );      
+    }
+  }
+
+  handleDemoUser() {
+    const user = { user: { username: "Demo", password: "password" }};
+    this.props.login(user);
   }
 
 
@@ -67,20 +73,25 @@ class SessionForm extends React.Component {
               <p>Study faster, remember longer.</p>
               <p>Experience the bliss of comprehension.</p>
             </div>
-            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form>
               {this.renderErrors()}
               <h1>Login</h1>
-                <input type="text"
-                  onChange={(e) => this.handleChange(e)}
-                  value={this.state.user.username}
-                  placeholder="Username"
-                  className="login-input" />
-                <input type="password"
-                  onChange={(e) => this.handleChange(e)}
-                  value={this.state.user.password}
-                  placeholder="Password"
-                  className="login-input" />
-              <input type="submit" value="Login" />
+              <input type="text"
+                onChange={(e) => this.handleChange(e)}
+                value={this.state.user.username}
+                placeholder="Username"
+                className="login-input" />
+              <input type="password"
+                onChange={(e) => this.handleChange(e)}
+                value={this.state.user.password}
+                placeholder="Password"
+                className="login-input" />
+              <input type="submit"
+                onClick={(e) => this.handleSubmit(e)}
+                value="Login" />
+              <input type="submit"
+                onClick={() => this.handleDemoUser()}
+                value="Demo"/>
               <p>Not signed up? <Link to="/signup">Sign up</Link></p>
             </form>
           </div>
@@ -93,20 +104,25 @@ class SessionForm extends React.Component {
               <p>Study faster, remember longer.</p>
               <p>Experience the bliss of comprehension.</p>
             </div>
-            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <form>
               {this.renderErrors()}
               <h1>Sign Up</h1>
-                <input type="text"
-                  onChange={(e) => this.handleChange(e)}
-                  value={this.state.user.username}
-                  placeholder="Username"
-                  className="login-input" />
-                <input type="password"
-                  onChange={(e) => this.handleChange(e)}
-                  value={this.state.user.password}
-                  placeholder="Password"
-                  className="login-input" />
-              <input type="submit" value="Sign Up" />
+              <input type="text"
+                onChange={(e) => this.handleChange(e)}
+                value={this.state.user.username}
+                placeholder="Username"
+                className="login-input" />
+              <input type="password"
+                onChange={(e) => this.handleChange(e)}
+                value={this.state.user.password}
+                placeholder="Password"
+                className="login-input" />
+              <input type="submit"
+                onClick={(e) => this.handleSubmit(e)}
+                value="Sign Up" />
+              <input type="submit"
+                onClick={() => this.handleDemoUser()}
+                value="Demo"/>
               <p>Already a user? <Link to="/login">Login</Link></p>
             </form>
           </div>

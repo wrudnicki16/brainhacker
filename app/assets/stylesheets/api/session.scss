@@ -29,6 +29,7 @@
   button:hover {
     background-color: #2b9292;
     border: 1px solid #2b9292;
+    outline: none;
   }
 }
 
@@ -127,6 +128,8 @@ header {
 
     input[type="submit"] {
       cursor: pointer;
+      margin-right: 20px;
+      margin-top: 10px;
       color: #c3c3c3;
       font-size: 18px;
       border-radius: 5px;
@@ -136,10 +139,21 @@ header {
       transition-duration: 0.2s;
     }
     input[type="submit"]:hover,
-    input[type="submit"]:focus
+    input[type="submit"]:focus,
     input[type="submit"]:active {
       background-color: #1c6161;
       border: 1px solid #1c6161;
+      outline: none;
+    }
+    input[type="submit"]:last-of-type {
+      background-color: #3f8fcd;
+      border: 1px solid #3f8fcd;
+    }
+    input[type="submit"]:last-of-type:hover,
+    input[type="submit"]:last-of-type:focus,
+    input[type="submit"]:last-of-type:active {
+      background-color: #35709d;
+      border: 1px solid #35709d;
     }
 
     a {
