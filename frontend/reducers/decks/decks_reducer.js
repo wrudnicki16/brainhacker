@@ -6,9 +6,9 @@ const decksReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_DECKS:
-      return merge({}, state, { decks: action.decks });
+      return merge({}, state, action.decks);
     case RECEIVE_DECK:
-      return merge({}, state, { deck: action.deck });
+      return merge({}, state, action.deck);
     default:
       return state;
   }

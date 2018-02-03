@@ -9,9 +9,10 @@ class DeckIndexSidebar extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log("check props deck", this.props);
     if (this.props) {
-      let decks = this.props.decks.map((deck) => <DeckIndexItem deck={deck} key={deck.id}/>);
+      let decks = this.props.decks.map((deck) => <DeckIndexItem key={deck.id} deck={deck} />);
+      console.log("decks = ", decks);
       return (
         <div>
           <Link to="/decks/new">Add Deck</Link>

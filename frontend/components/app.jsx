@@ -6,6 +6,7 @@ import { Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { logout } from '../actions/session_actions';
 import DeckIndexSidebarContainer from './deck/deck_index_sidebar_container';
+import DeckFormContainer from './deck/deck_form_container';
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <ProtectedRoute path="/decks" component={DeckIndexSidebarContainer} />
+        <ProtectedRoute path="/decks/new" component={DeckFormContainer} />
         <AuthRoute path="/" component={SessionFormContainer} />
       </Switch>
     </div>

@@ -6,10 +6,8 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("state!!!", state);
-  console.log("props!", ownProps);
   return {
-    decks: asArray(state.entities)
+    decks: Object.values(state.entities.decks)
   };
 };
 
