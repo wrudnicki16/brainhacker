@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { logout } from '../actions/session_actions';
 import DeckIndexSidebarContainer from './deck/deck_index_sidebar_container';
 import DeckFormContainer from './deck/deck_form_container';
-
+import DeckShowContainer from './deck/deck_show_container';
 const App = () => (
   <div>
     <header>
@@ -24,7 +24,10 @@ const App = () => (
         <ProtectedRoute path="/decks" component={DeckIndexSidebarContainer} />
         <AuthRoute path="/" component={SessionFormContainer} />
       </Switch>
-      <ProtectedRoute path="/decks/new" component={DeckFormContainer} />
+      <Switch>
+        <ProtectedRoute path="/decks/new" component={DeckFormContainer} />
+        <ProtectedRoute path="/decks/:deckId" component={DeckShowContainer} />
+      </Switch>
     </div>
   </div>
 );

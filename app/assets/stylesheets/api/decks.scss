@@ -130,4 +130,62 @@
       color: #2b9292;
     }
   }
+
+}
+
+.deck-show-page {
+  width: 100%;
+  height: calc(100vh - 59px);
+  background-color: #fff;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 25px 50px;
+  box-sizing: border-box;
+  overflow: scroll;
+
+}
+
+.deck-header {
+  font-size: 40px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.deck-delete {
+
+  align-self: flex-end;
+  border: none;
+  outline: none;
+  color: #555;
+  cursor: pointer;
+}
+
+.deck-study {
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 10px;
+  width: 100px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #2b9292;
+  border: 1px solid #2b9292;
+}
+
+.deck-cards-divider {
+  width: 100%;
+  border: 0.5px solid #ddd;
+  height: 0;
+  margin: 30px 0;
+}
+
+.deck-cards {
+
 }
