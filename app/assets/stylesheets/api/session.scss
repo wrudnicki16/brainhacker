@@ -1,88 +1,7 @@
 // Place all the styles related to the api/session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.nav-greeting {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: #fafafa;
-  a {
-    margin: 0 35px;
-    color: #fafafa;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #2aadad;
-  }
-
-  button {
-    padding: 10px;
-    cursor: pointer;
-    margin: 0 35px;
-    color: #fdfdfd;
-    border-radius: 5px;
-    border: 1px solid #2aadad;
-    background-color: #2aadad;
-    transition-duration: 0.2s;
-    outline: none;
-  }
-
-  button:hover {
-    background-color: #2b9292;
-    border: 1px solid #2b9292;
-  }
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #fafafa;
-  padding: 8px;
-  a {
-    text-decoration: none;
-  }
-}
-.nav-logo-img {
-  background-image: image_url("brain_hacking2.png");
-  height: 35px;
-  width: 53px;
-  background-size: cover;
-  text-decoration: none;
-
-
-}
-
-header {
-  background-color: #272829;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3px 23px;
-  h1 {
-    align-self: center;
-    color: #fafafa;
-    font-size: 2em;
-    margin: 0 20px;
-  }
-}
-.login-page-header {
-  margin-left: 3vh;
-  color: #c3c3c3;
-
-  h1 {
-    font-size: 2.6em;
-  }
-
-  p {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-
-}
-
-.login-page {
+.main-page {
   display: flex;
   justify-content: space-between;
   background-image: image_url("splash_img.jpg");
@@ -187,6 +106,88 @@ header {
     }
   }
 }
+
+.nav-greeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #fafafa;
+  a {
+    margin: 0 35px;
+    color: #fafafa;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #2aadad;
+  }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 35px;
+    color: #fdfdfd;
+    border-radius: 5px;
+    border: 1px solid #2aadad;
+    background-color: #2aadad;
+    transition-duration: 0.2s;
+    outline: none;
+  }
+
+  button:hover {
+    background-color: #2b9292;
+    border: 1px solid #2b9292;
+  }
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fafafa;
+  padding: 8px;
+  a {
+    text-decoration: none;
+  }
+}
+.nav-logo-img {
+  background-image: image_url("brain_hacking2.png");
+  height: 35px;
+  width: 53px;
+  background-size: cover;
+  text-decoration: none;
+
+
+}
+
+header {
+  background-color: #272829;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 23px;
+  h1 {
+    align-self: center;
+    color: #fafafa;
+    font-size: 2em;
+    margin: 0 20px;
+  }
+}
+.login-page-header {
+  margin-left: 3vh;
+  color: #c3c3c3;
+
+  h1 {
+    font-size: 2.6em;
+  }
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+}
+
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #c3c3c3;

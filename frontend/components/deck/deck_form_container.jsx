@@ -1,10 +1,17 @@
-import React from 'react';
+import DeckForm from './deck_form';
+import { connect } from 'react-redux';
+import { createDeck } from '../../actions/deck_actions';
 
+const mapStateToProps = ({ ui }) => {
+  return {
+    errors: ui.errors
+  };
+};
 
-class DeckForm extends React.Component {
-  render() {
-    return (
-      <div><h1>doing deck form things</h1></div>
-    );
-  }
-}
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    createDeck: () => dispatch(createDeck())
+  };
+};
+
+export default connect(null, mapDispatchToProps)(DeckForm);

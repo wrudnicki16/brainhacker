@@ -63,3 +63,67 @@
   border-bottom: 1px solid #ddd;
   height: 75px;
 }
+
+.deck-create-form {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  color: #aaa;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input[type="submit"] {
+      align-self: flex-end;
+      cursor: pointer;
+
+      padding: 10px;
+      width: 150px;
+      margin-right: 20px;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 5px;
+      background-color: #27b574;
+      border: 1px solid #27b574;
+      -webkit-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+    }
+
+    input[type="submit"]:hover,
+    input[type="submit"]:focus,
+    input[type="submit"]:active {
+      background-color: #1e8c59;
+      border: 1px solid #1e8c59;
+      outline: none;
+    }
+
+    input[type="text"] {
+      color: #2b9292;
+      font-family: 'Sanchez', serif;
+      margin-top: 75px;
+      font-size: 24px;
+      width: 90%;
+      border: none;
+      border-top: 1px solid #ddd;
+      margin-bottom: 10px;
+      height: 50px;
+      outline: none;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #2b9292;
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #2b9292;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #2b9292;
+    }
+  }
+}
