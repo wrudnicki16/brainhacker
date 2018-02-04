@@ -4,7 +4,12 @@ class DeckIndexItem extends React.Component {
   render () {
     const { id, title } = this.props.deck;
     return (
-      <li>{title}</li>
+      <div className="deck-select">
+        <div className="deck-content">
+          {title}
+        </div>
+        <div className="deck-divider"></div>
+      </div>
     );
   }
 }

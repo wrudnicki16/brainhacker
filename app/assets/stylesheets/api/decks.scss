@@ -1,3 +1,65 @@
 // Place all the styles related to the api/decks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.decks-sidebar {
+  color: #aaa;
+  background-color: #fff;
+  font-weight: 300;
+
+  h1 {
+    font-weight: 300;
+  }
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 35px;
+    color: #fdfdfd;
+    border-radius: 5px;
+    border: 1px solid #27b574;
+    background-color: #27b574;
+    transition-duration: 0.2s;
+    outline: none;
+  }
+
+  button:hover {
+    background-color: #1e8c59;
+    border: 1px solid #1e8c59;
+  }
+}
+.deck-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deck-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  width: 355px;
+  height: 110px;
+  transition-duration: 0.15s;
+}
+
+.deck-content:hover {
+  background-color: #2b9292;
+  color: #fff;
+  cursor: pointer;
+}
+
+.deck-divider {
+  width: 100%;
+  border: 0.5px solid #ddd;
+  height: 0;
+}
+
+.decks-sidebar-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  height: 75px;
+}

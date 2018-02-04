@@ -24,12 +24,13 @@
     border-radius: 5px;
     border: 1px solid #2aadad;
     background-color: #2aadad;
+    transition-duration: 0.2s;
+    outline: none;
   }
 
   button:hover {
     background-color: #2b9292;
     border: 1px solid #2b9292;
-    outline: none;
   }
 }
 
@@ -38,13 +39,14 @@
   align-items: center;
   justify-content: space-between;
   color: #fafafa;
+  padding: 8px;
   a {
     text-decoration: none;
   }
 }
 .nav-logo-img {
-  background-image: image_url("brain_hacking.png");
-  height: 53px;
+  background-image: image_url("brain_hacking2.png");
+  height: 35px;
   width: 53px;
   background-size: cover;
   text-decoration: none;
@@ -57,7 +59,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px 35px;
+  padding: 3px 23px;
   h1 {
     align-self: center;
     color: #fafafa;
