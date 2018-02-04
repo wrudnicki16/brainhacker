@@ -2,15 +2,15 @@ import DeckForm from './deck_form';
 import { connect } from 'react-redux';
 import { createDeck } from '../../actions/deck_actions';
 
-const mapStateToProps = ({ ui }) => {
+const mapStateToProps = ({ errors }) => {
   return {
-    errors: ui.errors
+    errors: errors.session
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    createDeck: () => dispatch(createDeck())
+    createDeck: (deck) => dispatch(createDeck(deck))
   };
 };
 

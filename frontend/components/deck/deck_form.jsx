@@ -11,14 +11,21 @@ class DeckForm extends React.Component {
     };
   }
 
+  // navigageToDeckShow() {
+  //   this.props.history.push()
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     const deck = merge({}, this.state);
-    this.props.createDeck(deck);
+    const newDeck = this.props.createDeck(deck);
+    console.log("this is the new deck", newDeck);
+    console.log("these are state", this.state);
+    console.log("this is props");
+    // this.navigageToDeckShow(newDeck);
     this.setState(() => {
       return { deck: { title: ""}};
     });
-    // <Redirect to="decks/"
   }
 
   handleChange(e) {
