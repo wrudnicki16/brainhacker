@@ -1,6 +1,18 @@
 // Place all the styles related to the api/decks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-page-decks {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  min-width: 356px;
+}
+
+.splash-overlay {
+  width: calc(100vw - 355px);
+  height: 100%;
+  background-color: #fff;
+}
 
 .decks-sidebar {
   color: #aaa;
@@ -71,9 +83,12 @@
 
 .deck-create-form {
   height: 100%;
-  width: 100%;
+  width: 300%;
   background-color: #fff;
   color: #aaa;
+  padding: 25px 50px;
+  box-sizing: border-box;
+
   form {
     display: flex;
     flex-direction: column;
@@ -109,7 +124,7 @@
       font-family: 'Sanchez', serif;
       margin-top: 75px;
       font-size: 24px;
-      width: 90%;
+      width: 100%;
       border: none;
       border-top: 1px solid #ddd;
       margin-bottom: 10px;
@@ -134,7 +149,7 @@
 }
 
 .deck-show-page {
-  width: 100%;
+  width: 300%;
   height: calc(100vh - 59px);
   background-color: #fff;
   color: #aaa;
@@ -144,7 +159,6 @@
   align-items: flex-start;
   padding: 25px 50px;
   box-sizing: border-box;
-  overflow: scroll;
 
 }
 

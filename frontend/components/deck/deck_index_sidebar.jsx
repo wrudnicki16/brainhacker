@@ -25,14 +25,17 @@ class DeckIndexSidebar extends React.Component {
     if (this.props) {
       let decks = this.props.decks.map((deck) => <DeckIndexItem key={deck.id} deck={deck} />);
       return (
-        <div className="decks-sidebar">
-          <div className="decks-sidebar-header">
-            <h1>Decks</h1>
-            <button onClick={() => this.props.history.push("/decks/new")}><FontAwesome className="fas fa-plus" name="plus"/> Add Deck</button>
+        <div className="main-page-decks">
+          <div className="decks-sidebar">
+            <div className="decks-sidebar-header">
+              <h1>Decks</h1>
+              <button onClick={() => this.props.history.push("/decks/new")}><FontAwesome className="fas fa-plus" name="plus"/> Add Deck</button>
+            </div>
+            <div className="decks-body">
+              {decks}
+            </div>
           </div>
-          <div className="decks-body">
-            {decks}
-          </div>
+          <div className="splash-overlay"></div>
         </div>
       );
     } else {

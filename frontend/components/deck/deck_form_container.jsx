@@ -4,7 +4,7 @@ import { createDeck } from '../../actions/deck_actions';
 
 const mapStateToProps = ({ errors }) => {
   return {
-    errors: errors.session
+    errors: errors.deck
   };
 };
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(DeckForm);
+export default connect(mapStateToProps, mapDispatchToProps)(DeckForm);

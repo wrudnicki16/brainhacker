@@ -2,7 +2,7 @@ import * as DeckAPIUtil from '../util/deck_api_util';
 
 export const RECEIVE_DECKS = "RECEIVE_DECKS";
 export const RECEIVE_DECK = "RECEIVE_DECK";
-export const RECEIVE_DECK_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_DECK_ERRORS = "RECEIVE_DECK_ERRORS";
 export const REMOVE_DECK = "REMOVE_DECK";
 
 
@@ -20,7 +20,7 @@ export const receiveDeck = (payload) => {
   };
 };
 
-export const receiveDeckErrors = errors => {
+export const receiveErrors = errors => {
   return {
     type: RECEIVE_DECK_ERRORS,
     errors
@@ -41,7 +41,9 @@ export const deleteDeck = (id) => dispatch => {
 
 export const createDeck = (deck) => dispatch => {
   return DeckAPIUtil.createDeck(deck)
-      .then((deck1) => dispatch(receiveDeck(deck1)));
+      .then((deck1) => dispatch(receiveDeck(deck1),
+            err => dispatch(receiveErrors(err.responseJSON))
+      ));
 };
 
 export const fetchDeck = (id) => dispatch => {

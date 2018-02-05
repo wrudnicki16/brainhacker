@@ -35,7 +35,7 @@ class DeckForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors) {
+      console.log(this.props);
       return (
         <ul>
           {
@@ -47,17 +47,14 @@ class DeckForm extends React.Component {
           }
         </ul>
       );
-    }
   }
 
   render() {
     return (
       <div className="deck-create-form">
-        <ul>
+        <form>
           {this.renderErrors()}
-        </ul>
-        <form onSubmit={(e) => this.handleSubmit(e)}>
-          <input type="submit" value="Done"/>
+          <input type="submit" onClick={(e) => this.handleSubmit(e)} value="Done"/>
           <input type="text"
             placeholder="Title your deck"
             onChange={(e) => this.handleChange(e)}
