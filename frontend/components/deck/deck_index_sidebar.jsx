@@ -11,16 +11,6 @@ class DeckIndexSidebar extends React.Component {
     this.props.fetchDecks();
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   console.log("###############################");
-  //   console.log(newProps);
-  //   console.log(this.props);
-  //   if (this.props !== newProps) {
-  //     this.props.fetchDecks();
-  //   }
-  // }
-
-
   render() {
     if (this.props) {
       let decks = this.props.decks.map((deck) => <DeckIndexItem key={deck.id} deck={deck} />);

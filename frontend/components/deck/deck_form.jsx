@@ -35,18 +35,17 @@ class DeckForm extends React.Component {
   }
 
   renderErrors() {
-      console.log(this.props);
-      return (
-        <ul>
-          {
-            this.props.errors.map((error, i) => (
-              <li className="errors" key={`error-${i}`}>
-                {error}
-              </li>
-            ))
-          }
-        </ul>
-      );
+    return (
+      <ul>
+        {
+          this.props.errors.map((error, i) => (
+            <li className="errors" key={`error-${i}`}>
+              {error}
+            </li>
+          ))
+        }
+      </ul>
+    );
   }
 
   render() {
