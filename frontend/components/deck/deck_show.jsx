@@ -1,22 +1,33 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+import { Redirect } from 'react-router';
 
 class DeckShow extends React.Component {
-  removeDeck(deck) {
-    const { removeDeck, deckId } = this.props;
-    removeDeck(deckId);
-    this.props.history.push('/decks');
+  componentDidMount() {
+    const { deckId, decks } = this.props;
+    this.props.fetchDeck(this.props.deckId);
+  }
+
+  // componentWillReceiveProps() {
+  //   console.log("waaaa");
+  // }
+
+  deleteDeck(deck) {
+    const { deleteDeck, deckId, decks } = this.props;
+    deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
+    this.setState({ deckRemoved: true });
   }
 
   render() {
-    const { removeDeck, fetchDeck, deck, deckId, cards } = this.props;
-    return (
+    const { deleteDeck, decks, deckId, cards } = this.props;
+    let deck = decks[deckId];
+    return deck ? (
       <div className="deck-show-page">
         <div className="deck-header">
-          <button onClick={() => this.removeDeck(deck)} className="deck-delete">
+          <button onClick={() => this.deleteDeck(deck)} className="deck-delete">
             <FontAwesome className="far fa-trash-alt" name="trash" size="5x"/>
           </button>
-          { deck ? deck.title : null }
+          {deck.title}
           <button className="deck-study">
             Study
           </button>
@@ -26,6 +37,8 @@ class DeckShow extends React.Component {
           Some cards goin on
         </div>
       </div>
+    ) : (
+        <div className="deck-show-page"></div>
     );
   }
 }

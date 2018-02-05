@@ -23,7 +23,7 @@ export const createDeck = (deck) => {
   });
 };
 
-export const removeDeck = (id) => {
+export const deleteDeck = (id) => {
   return $.ajax({
     method: "DELETE",
     url: `/api/decks/${id}`,

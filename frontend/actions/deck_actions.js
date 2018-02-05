@@ -3,6 +3,8 @@ import * as DeckAPIUtil from '../util/deck_api_util';
 export const RECEIVE_DECKS = "RECEIVE_DECKS";
 export const RECEIVE_DECK = "RECEIVE_DECK";
 export const RECEIVE_DECK_ERRORS = "RECEIVE_ERRORS";
+export const REMOVE_DECK = "REMOVE_DECK";
+
 
 export const receiveDecks = (decks) => {
   return {
@@ -11,10 +13,10 @@ export const receiveDecks = (decks) => {
   };
 };
 
-export const receiveDeck = (deck) => {
+export const receiveDeck = (payload) => {
   return {
     type: RECEIVE_DECK,
-    deck
+    payload
   };
 };
 
@@ -25,10 +27,16 @@ export const receiveDeckErrors = errors => {
   };
 };
 
-// is this null going to mess something up?
-export const removeDeck = (id) => dispatch => {
-  return DeckAPIUtil.removeDeck(id)
-      .then(() => dispatch(receiveDeck(null)));
+export const removeDeck = (deckId) => {
+  return {
+    type: REMOVE_DECK,
+    deckId
+  };
+};
+
+export const deleteDeck = (id) => dispatch => {
+  return DeckAPIUtil.deleteDeck(id)
+      .then(() => dispatch(removeDeck(id)));
 };
 
 export const createDeck = (deck) => dispatch => {

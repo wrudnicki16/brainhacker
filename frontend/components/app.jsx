@@ -25,8 +25,8 @@ const App = () => (
         <AuthRoute path="/" component={SessionFormContainer} />
       </Switch>
       <Switch>
-        <ProtectedRoute path="/decks/new" component={DeckFormContainer} />
-        <ProtectedRoute path="/decks/:deckId" component={DeckShowContainer} />
+        <ProtectedRoute exact path="/decks/new" component={DeckFormContainer} />
+        <ProtectedRoute exact path="/decks/:deckId" component={DeckShowContainer} />
       </Switch>
     </div>
   </div>

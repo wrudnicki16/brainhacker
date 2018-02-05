@@ -11,18 +11,20 @@ class DeckForm extends React.Component {
     };
   }
 
-  // navigageToDeckShow() {
-  //   this.props.history.push()
-  // }
+  navigageToDeckShow(id) {
+    this.props.history.push(`/decks/${id}`);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const deck = merge({}, this.state);
-    const newDeck = this.props.createDeck(deck);
-    console.log("this is the new deck", newDeck);
-    console.log("these are state", this.state);
-    console.log("this is props");
-    // this.navigageToDeckShow(newDeck);
+    // deck1 is in the first promise because we receive a promise from ajax on the backend with a deck as the data.
+    // action is in the second promise because we just dispatched an action with a payload to be sent to the reducer.
+    // this last "then" takes that action and redirects us to the appropriate page.
+
+    this.props.createDeck(deck)
+    .then((action) => this.navigageToDeckShow(action.payload.deck.id));
+
     this.setState(() => {
       return { deck: { title: ""}};
     });
@@ -32,12 +34,18 @@ class DeckForm extends React.Component {
     this.setState(merge({}, this.state, { deck: { title: e.target.value}}));
   }
 
-  errors() {
+  renderErrors() {
     if (this.props.errors) {
       return (
-        this.props.errors.map(error => {
-          return (<li className="error" key={error}>{error}</li>);
-        })
+        <ul>
+          {
+            this.props.errors.map((error, i) => (
+              <li className="errors" key={`error-${i}`}>
+                {error}
+              </li>
+            ))
+          }
+        </ul>
       );
     }
   }
@@ -46,7 +54,7 @@ class DeckForm extends React.Component {
     return (
       <div className="deck-create-form">
         <ul>
-          {this.errors()}
+          {this.renderErrors()}
         </ul>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <input type="submit" value="Done"/>

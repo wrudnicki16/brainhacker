@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
-import { fetchDecks, fetchDeck, createDeck, removeDeck } from './actions/deck_actions';
+import { fetchDecks, fetchDeck, createDeck, deleteDeck } from './actions/deck_actions';
 import Root from './components/root.jsx';
 
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchDeck = fetchDeck;
   window.fetchDecks = fetchDecks;
   window.createDeck = createDeck;
-  window.removeDeck = removeDeck;
+  window.deleteDeck = deleteDeck;
 
 
   const root = document.getElementById('root');
