@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deck_id: 1
+  front: MyText
+  back: MyText
+
+two:
+  deck_id: 1
+  front: MyText
+  back: MyText

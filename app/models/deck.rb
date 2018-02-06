@@ -6,4 +6,6 @@ class Deck < ApplicationRecord
   primary_key: :id,
   foreign_key: :creator_id,
   class_name: :User
+
+  has_many :cards
 end
