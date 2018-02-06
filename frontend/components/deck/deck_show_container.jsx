@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import DeckShow from './deck_show';
 import { fetchDeck, deleteDeck } from '../../actions/deck_actions';
-
+import { selectCards } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   let deckId = ownProps.match.params.deckId;
   return {
     deckId: deckId,
     decks: state.entities.decks,
+    cards: selectCards(state.entities, deckId)
   };
 };
 

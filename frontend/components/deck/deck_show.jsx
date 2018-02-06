@@ -1,6 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Redirect } from 'react-router';
+import CardIndexContainer from '../card/card_index_container';
 
 class DeckShow extends React.Component {
   componentDidMount() {
@@ -29,9 +30,7 @@ class DeckShow extends React.Component {
           </button>
         </div>
         <div className="deck-cards-divider"></div>
-        <div className="deck-cards">
-          Some cards goin on
-        </div>
+        <CardIndexContainer cards={cards}/>
       </div>
     ) : (
         <div className="deck-show-page"></div>
