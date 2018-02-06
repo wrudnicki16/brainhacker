@@ -2,7 +2,7 @@ class Api::CardsController < ApplicationController
   before_action :require_login
 
   def create
-    @card = Card.new
+    @card = Card.new(card_params)
     @card.deck_id = params[:deck_id]
 
     if @card.save
@@ -13,7 +13,7 @@ class Api::CardsController < ApplicationController
   end
 
   def index
-    @cards = Card.all
+    @cards = Card.all.where("deck_id = #{params[:deck_id]}")
   end
 
   def show
@@ -30,7 +30,7 @@ class Api::CardsController < ApplicationController
     @card = Card.find_by(id: params[:id])
 
     if @card
-      if @card.update
+      if @card.update(card_params)
         render :show
       else
         render json: @card.errors.full_messages
@@ -49,6 +49,13 @@ class Api::CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:front, :back)
+    # Need deck_id to filter based on the deck - for index and create actions.
+    # Create needs to set up the association with a deck through this.
+    # Can we maybe retrieve this through the url though?
+    # No because all we get through the ajax call is a payload
+    # We can certainly insert the deck id into the payload via the url,
+    # specifically on create (and maybe index? Depends on how much info
+    # we have on the frontend, not sure for now)
+    params.require(:card).permit(:front, :back, :deck_id)
   end
 end

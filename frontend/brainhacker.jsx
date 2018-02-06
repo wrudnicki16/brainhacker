@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
-import { fetchDecks, fetchDeck, createDeck, deleteDeck } from './actions/deck_actions';
+import { fetchCards, fetchCard, createCard, deleteCard, updateCard } from './util/card_api_util';
 import Root from './components/root.jsx';
 
 
@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchDeck = fetchDeck;
-  window.fetchDecks = fetchDecks;
-  window.createDeck = createDeck;
-  window.deleteDeck = deleteDeck;
+  window.fetchCard = fetchCard;
+  window.fetchCards = fetchCards;
+  window.createCard = createCard;
+  window.deleteCard = deleteCard;
+  window.updateCard = updateCard;
 
 
   const root = document.getElementById('root');

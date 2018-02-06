@@ -1,41 +1,41 @@
-export const fetchCards = () => {
-  return {
+export const fetchCards = (deckId) => {
+  return $.ajax({
     method: "GET",
-    url: "/api/cards",
+    url: `/api/decks/${deckId}/cards`,
     error: err => console.log(err)
-  };
+  });
 };
 
 export const fetchCard = (id) => {
-  return {
+  return $.ajax({
     method: "GET",
     url: `/api/cards/${id}`,
     error: err => console.log(err)
-  };
+  });
 };
 
-export const createCard = (card) => {
-  return {
+export const createCard = (payload) => {
+  return $.ajax({
     method: "POST",
-    url: `/api/cards`,
-    data: card,
+    url: `/api/decks/${payload.card.deck_id}/cards`,
+    data: payload,
     error: err => console.log(err)
-  };
+  });
 };
 
 export const deleteCard = (id) => {
-  return {
+  return $.ajax({
     method: "DELETE",
     url: `/api/cards/${id}`,
     error: err => console.log(err)
-  };
+  });
 };
 
-export const updateCard = (card) => {
-  return {
+export const updateCard = (payload) => {
+  return $.ajax({
     method: "PATCH",
-    url: `/api/cards/${card.id}`,
-    data: card,
+    url: `/api/cards/${payload.card.id}`,
+    data: payload,
     error: err => console.log(err)
-  };
+  });
 };
