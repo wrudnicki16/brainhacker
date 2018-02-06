@@ -2,7 +2,7 @@ class Api::CardsController < ApplicationController
   before_action :require_login
 
   def create
-    @card = Card.new(card_params)
+    @card = Card.new(card_create_params)
     @card.deck_id = params[:deck_id]
 
     if @card.save
@@ -30,7 +30,7 @@ class Api::CardsController < ApplicationController
     @card = Card.find_by(id: params[:id])
 
     if @card
-      if @card.update(card_params)
+      if @card.update(card_update_params)
         render :show
       else
         render json: @card.errors.full_messages
@@ -48,7 +48,7 @@ class Api::CardsController < ApplicationController
 
   private
 
-  def card_params
+  def card_create_params
     # Need deck_id to filter based on the deck - for index and create actions.
     # Create needs to set up the association with a deck through this.
     # Can we maybe retrieve this through the url though?
@@ -57,5 +57,9 @@ class Api::CardsController < ApplicationController
     # specifically on create (and maybe index? Depends on how much info
     # we have on the frontend, not sure for now)
     params.require(:card).permit(:front, :back, :deck_id)
+  end
+
+  def card_update_params
+    params.require(:card).permit(:front, :back)
   end
 end

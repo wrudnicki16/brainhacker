@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
-import { fetchCards, fetchCard, createCard, deleteCard, updateCard } from './util/card_api_util';
+import { fetchCards, fetchCard, createCard, deleteCard, updateCard } from './actions/card_actions';
 import Root from './components/root.jsx';
 
 
