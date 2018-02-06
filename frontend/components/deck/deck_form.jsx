@@ -56,6 +56,7 @@ class DeckForm extends React.Component {
           <input type="submit" onClick={(e) => this.handleSubmit(e)} value="Done"/>
           <input type="text"
             placeholder="Title your deck"
+            autoFocus
             onChange={(e) => this.handleChange(e)}
             value={this.state.deck.title}/>
         </form>
