@@ -18,14 +18,7 @@ class CardIndexRowForm extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.card.id !== newProps.card.id) {
-      this.setState({ card: newProps.card });
-    }
-  }
-
   render() {
-    console.warn("these are my props", this.props);
     const { id, front, back } = this.state.card;
     return (
       <form className={`row-${this.props.index + 1}`}>
@@ -35,7 +28,6 @@ class CardIndexRowForm extends React.Component {
           onChange={(e) => this.handleChange(e)}
           value={front}
           onBlur={() => {
-            console.warn("blurred!");
             this.props.updateCard({ card: { id, front }});
           }}>
         </textarea>
@@ -44,7 +36,6 @@ class CardIndexRowForm extends React.Component {
           onChange={(e) => this.handleChange(e)}
           value={back}
           onBlur={() => {
-            console.warn("blurred!");
             this.props.updateCard({ card: { id, back }});
           }}>
         </textarea>

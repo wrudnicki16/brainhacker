@@ -10,16 +10,13 @@ class CardIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     if (this.props.deckId !== newProps.deckId) {
       this.props.fetchCards(newProps.match.params.deckId);
-    } else if (this.props.cards.length !== newProps.cards.length) {
-      this.props.fetchCards(this.props.deckId);
     }
   }
 
   render() {
     let blankCard = { card: { front: "", back: "", deckId: this.props.deckId} };
-    console.warn("CARDS PROPS ARE CHANGING", this.props.cards);
     let cards = this.props.cards.map((card, i) => {
-      return <CardIndexRowFormContainer card={card} key={i} index={i}/>;
+      return <CardIndexRowFormContainer card={card} key={card.id} index={i}/>;
     });
     return (
       <div className="cards-index">
@@ -33,9 +30,7 @@ class CardIndex extends React.Component {
           <div className="cards-header-row"></div>
         </div>
         <div className="cards-body">
-          <div className="cards-body-header">
-
-          </div>
+          <div className="cards-body-header"></div>
           {cards}
         </div>
       </div>
