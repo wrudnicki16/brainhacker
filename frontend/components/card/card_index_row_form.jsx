@@ -12,3 +12,5 @@ class CardIndexRowForm extends React.Component {
     );
   }
 }
+
+export default CardIndexRowForm;

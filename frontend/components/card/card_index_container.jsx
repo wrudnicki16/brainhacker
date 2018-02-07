@@ -13,10 +13,9 @@ import { selectCards } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   let deckId = ownProps.match.params.deckId;
-  debugger;
   return {
     deckId: deckId,
-    cards: state.cards
+    cards: Object.values(state.entities.cards)
   };
 };
 

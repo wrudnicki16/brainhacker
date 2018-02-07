@@ -10,10 +10,9 @@ class CardIndex extends React.Component {
 
   render() {
     console.log("CARD INDEX props:", this.props);
-    console.log("CARD INDEX state:", this.state);
-    let cards = this.state.cards.map((card, i) => (
-      <CardIndexRowForm card={card} key={i}/>
-    ));
+    let cards = this.props.cards.map((card, i) => {
+      return <CardIndexRowForm card={card} key={i}/>;
+    });
     return (
       <div className="cards-index">
         <div className="cards-header">

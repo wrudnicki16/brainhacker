@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     deckId: deckId,
     decks: state.entities.decks,
-    cards: selectCards(state.entities, deckId)
   };
 };
 

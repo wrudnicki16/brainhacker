@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
 import { fetchCards, fetchCard, createCard, deleteCard, updateCard } from './actions/card_actions';
+import { fetchDeck } from './actions/deck_actions';
 import Root from './components/root.jsx';
 
 
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createCard = createCard;
   window.deleteCard = deleteCard;
   window.updateCard = updateCard;
+  window.fetchDeck = fetchDeck;
 
 
   const root = document.getElementById('root');

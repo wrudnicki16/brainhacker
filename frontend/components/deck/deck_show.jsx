@@ -6,17 +6,17 @@ import CardIndexContainer from '../card/card_index_container';
 class DeckShow extends React.Component {
   componentDidMount() {
     const { deckId, decks } = this.props;
-    this.props.fetchDeck(this.props.deckId);
+    console.warn("component mounted HERE");
+    this.props.fetchDeck(this.props.deckId).then(console.warn);
   }
 
   deleteDeck(deck) {
     const { deleteDeck, deckId, decks } = this.props;
     deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
-    this.setState({ deckRemoved: true });
   }
 
   render() {
-    const { deleteDeck, decks, deckId, cards } = this.props;
+    const { deleteDeck, decks, deckId } = this.props;
     let deck = decks[deckId];
     return deck ? (
       <div className="deck-show-page">
@@ -30,7 +30,7 @@ class DeckShow extends React.Component {
           </button>
         </div>
         <div className="deck-cards-divider"></div>
-        <CardIndexContainer cards={cards}/>
+        <CardIndexContainer />
       </div>
     ) : (
         <div className="deck-show-page"></div>

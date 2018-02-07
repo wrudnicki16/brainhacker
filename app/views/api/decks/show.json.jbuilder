@@ -2,7 +2,10 @@ json.deck do
   json.extract! @deck, :id, :title, :creator_id
 end
 
-# do the block below if you want an array of ids for cards
-
-# json.cards do
-# end
+json.cards do
+  @deck.cards.each do |card|
+    json.set! card.id do
+      json.extract! card, :id, :front, :back, :deck_id
+    end
+  end  
+end
