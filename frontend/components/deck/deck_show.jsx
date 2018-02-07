@@ -21,10 +21,12 @@ class DeckShow extends React.Component {
     return deck ? (
       <div className="deck-show-page">
         <div className="deck-header">
-          <button onClick={() => this.deleteDeck(deck)} className="deck-delete">
-            <FontAwesome className="far fa-trash-alt" name="trash" size="5x"/>
-          </button>
-          {deck.title}
+          <div className="deck-title">
+            <button onClick={() => this.deleteDeck(deck)} className="deck-delete">
+              <FontAwesome className="far fa-trash-alt" name="trash" size="5x"/>
+            </button>
+            <span className="deck-title-span">{deck.title}</span>
+          </div>
           <button className="deck-study">
             Study
           </button>

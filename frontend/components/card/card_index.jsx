@@ -21,13 +21,17 @@ class CardIndex extends React.Component {
     return (
       <div className="cards-index">
         <div className="cards-header">
-          <h1>Cards:</h1>
-          <button
+          Cards:
+          <a
             onClick={() => this.props.createCard(blankCard)}>
-            Add Card
-          </button>
+            <FontAwesome className="fas fa-plus-circle" name="plus-circle"/>
+            &nbsp;Add Card
+          </a>
         </div>
         <div className="cards-body">
+          <div className="cards-body-header">
+
+          </div>
           {cards}
         </div>
       </div>

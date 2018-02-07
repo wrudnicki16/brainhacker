@@ -1,3 +1,73 @@
 // Place all the styles related to the api/cards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cards-index {
+  width: 100%;
+  height: 300px;
+
+  form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    border-top: 2px solid #ddd;
+    color: #333;
+
+    button {
+      margin-left: auto;
+      border: none;
+      color: #ce493e;
+      cursor: pointer;
+      margin-top: 3px;
+      background-color: rgba(255, 255, 255, 0);
+      outline: none;
+    }
+    span:first-child {
+      margin-right: 65px;
+    }
+    span:last-child {
+      margin-right: 0;
+    }
+  }
+
+  textarea {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    color: #666;
+    width: 40%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    line-height: 1.4;
+  }
+
+}
+
+.row-front {
+  margin-right: 36px;
+}
+
+.cards-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  font-weight: 300;
+  font-size: 24px;
+
+  a {
+    font-size: 17px;
+    align-self: flex-end;
+    cursor: pointer;
+    color: #2aadad;
+    text-decoration: none;
+    padding-bottom: 20px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #268a8a;
+  }
+}
