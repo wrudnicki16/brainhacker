@@ -3,31 +3,50 @@ import { merge } from 'lodash';
 import FontAwesome from 'react-fontawesome';
 
 class CardIndexRowForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      card: merge({}, this.props.card)
+    };
+  }
+
   handleChange(e) {
-    const { id } = this.props.card;
     if (e.target.className === "row-front") {
       this.setState(merge({}, this.state, { card: { front: e.target.value}}));
-      this.props.updateCard({card: { id: id, front: e.target.value }});
     } else {
       this.setState(merge({}, this.state, { card: { back: e.target.value}}));
-      this.props.updateCard({card: { id: id, back: e.target.value }});
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.card.id !== newProps.card.id) {
+      this.setState({ card: newProps.card });
     }
   }
 
   render() {
-    const { id, front, back } = this.props.card;
+    console.warn("these are my props", this.props);
+    const { id, front, back } = this.state.card;
     return (
       <form className={`row-${this.props.index + 1}`}>
         <span>{this.props.index + 1}</span>
         <textarea
           className="row-front"
           onChange={(e) => this.handleChange(e)}
-          value={front}>
+          value={front}
+          onBlur={() => {
+            console.warn("blurred!");
+            this.props.updateCard({ card: { id, front }});
+          }}>
         </textarea>
         <textarea
           className="row-back"
           onChange={(e) => this.handleChange(e)}
-          value={back}>
+          value={back}
+          onBlur={() => {
+            console.warn("blurred!");
+            this.props.updateCard({ card: { id, back }});
+          }}>
         </textarea>
         <button
           onClick= {() => this.props.deleteCard(id)}>

@@ -9,5 +9,9 @@
 users = User.create([{username: "Demo", password: "password"}]);
 
 decks = Deck.create([
-  { title: "Psychology", creator_id: 1 }
+  { title: "Psychology", creator_id: 1 },
 ]);
+
+cards = Card.create([
+  { front: "Function of forgetting", back: "e^-x", deck_id: 1 }
+  ])
