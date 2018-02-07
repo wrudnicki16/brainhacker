@@ -30,6 +30,7 @@ class CardIndex extends React.Component {
             <FontAwesome className="fas fa-plus-circle" name="plus-circle"/>
             &nbsp;Add Card
           </a>
+          <div className="cards-header-row"></div>
         </div>
         <div className="cards-body">
           <div className="cards-body-header">

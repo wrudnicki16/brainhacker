@@ -10,7 +10,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 10px;
-    border-top: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
     color: #333;
 
     button {
@@ -70,4 +70,8 @@
     text-decoration: underline;
     color: #268a8a;
   }
+}
+
+.cards-header-row {
+  border-bottom: 2px solid #ddd;
 }
