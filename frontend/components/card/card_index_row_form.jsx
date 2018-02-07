@@ -21,13 +21,13 @@ class CardIndexRowForm extends React.Component {
         <span>{this.props.index + 1}</span>
         <textarea
           className="row-front"
-          onChange={(e) => this.handleChange(e)}>
-          {front}
+          onChange={(e) => this.handleChange(e)}
+          value={front}>
         </textarea>
         <textarea
           className="row-back"
-          onChange={(e) => this.handleChange(e)}>
-          {back}
+          onChange={(e) => this.handleChange(e)}
+          value={back}>
         </textarea>
         <button
           onClick= {() => this.props.deleteCard(id)}>
