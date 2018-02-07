@@ -9,11 +9,9 @@ class CardIndex extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.deckId !== newProps.deckId) {
-      console.warn("new deck");
       this.props.fetchCards(newProps.match.params.deckId);
     } else if (this.props.cards.length !== newProps.cards.length) {
       this.props.fetchCards(this.props.deckId);
-      console.warn("props", this.props);
     }
   }
 
