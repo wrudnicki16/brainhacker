@@ -14,7 +14,7 @@ class CardIndex extends React.Component {
   }
 
   render() {
-    let blankCard = { card: { front: "", back: "", deck_id: this.props.deckId} };
+    let blankCard = { card: { front: "", back: "", deckId: this.props.deckId} };
     let cards = this.props.cards.map((card, i) => {
       return <CardIndexRowFormContainer card={card} key={i} index={i}/>;
     });

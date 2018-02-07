@@ -17,7 +17,7 @@ export const fetchCard = (id) => {
 export const createCard = (payload) => {
   return $.ajax({
     method: "POST",
-    url: `/api/decks/${payload.card.deck_id}/cards`,
+    url: `/api/decks/${payload.card.deckId}/cards`,
     data: payload,
     error: err => console.log(err)
   });
