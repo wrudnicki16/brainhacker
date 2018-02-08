@@ -12,7 +12,10 @@ class User < ApplicationRecord
   foreign_key: :creator_id,
   class_name: :User
 
-  has_many :confs
+  has_many :confs,
+  primary_key: :id,
+  foreign_key: :tester_id,
+  class_name: :Conf
   # associations
 
   def self.generate_session_token
