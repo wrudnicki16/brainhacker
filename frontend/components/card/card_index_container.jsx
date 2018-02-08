@@ -3,9 +3,6 @@ import { withRouter } from 'react-router-dom';
 import CardIndex from './card_index';
 import {
   fetchCards,
-  fetchCard,
-  deleteCard,
-  updateCard,
   createCard
 } from '../../actions/card_actions';
 import { selectCards } from '../../reducers/selectors';
@@ -22,9 +19,6 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchCards: deckId => dispatch(fetchCards(deckId)),
-    fetchCard: id => dispatch(fetchCard(id)),
-    deleteCard: id => dispatch(deleteCard(id)),
-    updateCard: card => dispatch(updateCard(card)),
     createCard: card => dispatch(createCard(card))
   };
 };

@@ -27,7 +27,7 @@ class Api::CardsController < ApplicationController
   end
 
   def update
-    @card = Card.find_by(id: params[:id])
+    @card = current_user.cards.find_by(id: params[:id])
 
     if @card
       if @card.update(card_update_params)
@@ -36,14 +36,18 @@ class Api::CardsController < ApplicationController
         render json: @card.errors.full_messages
       end
     else
-      render json: ['Card not found'], status: 404
+      render json: ['Card belongs to another user'], status: 422
     end
   end
 
   def destroy
-    @card = Card.find_by(id: params[:id])
-    @card.destroy
-    render :show
+    @card = current_user.cards.find_by(id: params[:id])
+    if @card
+      @card.destroy
+      render :show
+    else
+      render json: ['Card belongs to another user'], status: 422
+    end
   end
 
   private

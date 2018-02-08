@@ -7,5 +7,16 @@ json.cards do
     json.set! card.id do
       json.extract! card, :id, :front, :back, :deck_id
     end
-  end  
+  end
 end
+
+
+# how do we get the latest confs here?
+
+# json.confs do
+#   @deck.cards.each do |card|
+#     card.confs.each do |conf|
+#
+#     end
+#   end
+# end
