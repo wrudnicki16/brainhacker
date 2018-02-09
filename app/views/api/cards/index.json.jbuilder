@@ -5,3 +5,4 @@
 end
 
 # get most recent conf for all cards given a current user here?
+# json.confs

@@ -13,12 +13,14 @@
 // YOU CAN USE DECK ASSOCIATIONS FOR YOUR MASTERY SCORE AND THATS IT.
 // YOU CAN SEND THIS INFORMATION THROUGH THE DECK SHOW PAGE.
 
-// THEN DECK SHOW PAGE SHOULD RERENDER EVERY TIME YOU ANSWER A QUESTION
+// SET THAT TO YOUR STATE, AND THEN JUST UPDATE THE CONFS TO BE THE NEW
+// CONFS, WHICH WILL IN TURN CHANGE YOUR MASTERY (how?)
 // SO YOU UPDATE THE MASTERY LEVEL APPROPRIATELY.
 
-export const createConf = (cardId) => {
+export const createConf = (payload) => {
   return $.ajax({
     method: "POST",
-    url: `/api/cards/${cardId}/confs`
+    url: `/api/cards/${payload.conf.cardId}/confs`,
+    data: payload
   });
 };

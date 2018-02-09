@@ -4,10 +4,11 @@ class Api::ConfsController < ApplicationController
     @conf.tester_id = current_user.id
     @conf.card_id = params[:card_id]
 
+    @deck = Card.find_by(id: @conf.card_id).deck
     if @conf.save
       # what should I be rendering here?
       # deck to re-render the mastery of the deck?
-      render "/api/deck/show"
+      render "/api/decks/show"
     else
       render json: @conf.errors.full_messages
     end
@@ -16,6 +17,7 @@ class Api::ConfsController < ApplicationController
   private
 
   def conf_params
-    params.require(:conf).permit(:score)
+    debugger
+    params.require(:conf).permit(:score, :card_id)
   end
 end
