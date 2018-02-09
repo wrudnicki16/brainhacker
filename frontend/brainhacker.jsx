@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import { createConf } from './util/conf_api_util';
+import { createConf } from './actions/conf_actions';
 import Root from './components/root.jsx';
 
 
