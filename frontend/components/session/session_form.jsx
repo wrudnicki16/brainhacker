@@ -39,7 +39,8 @@ class SessionForm extends React.Component {
     }
   }
 
-  handleDemoUser() {
+  handleDemoUser(e) {
+    e.preventDefault();
     const user = { user: { username: "Demo", password: "password" }};
     this.props.login(user);
   }
@@ -103,7 +104,7 @@ class SessionForm extends React.Component {
               onClick={(e) => this.handleSubmit(e)}
               value="Login" />
             <input type="submit"
-              onClick={() => this.handleDemoUser()}
+              onClick={(e) => this.handleDemoUser(e)}
               value="Demo"/>
             {this.navLink()}
           </form>

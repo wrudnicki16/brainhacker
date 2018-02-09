@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: confs
+#
+#  id         :integer          not null, primary key
+#  card_id    :integer          not null
+#  score      :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  tester_id  :integer          not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined. If you add columns to the

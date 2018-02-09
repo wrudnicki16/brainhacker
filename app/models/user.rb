@@ -10,7 +10,11 @@ class User < ApplicationRecord
   has_many :decks,
   primary_key: :id,
   foreign_key: :creator_id,
-  class_name: :User
+  class_name: :Deck
+
+  has_many :cards,
+  through: :decks,
+  source: :cards
 
   has_many :confs,
   primary_key: :id,

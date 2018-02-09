@@ -14,17 +14,27 @@ class Deck < ApplicationRecord
   source: :confs
 
   # frontend to backend
-  def self.get_user_score(deckId, current_user_id)
-    Deck.find_by(id: deckId)
-      .confs
+  # Get the most recent confs here.
+  # Might need to index the created_at column
+  def get_user_score(current_user_id)
+    if self.confs.where(tester_id: current_user_id).empty?
+      Conf.none
+    else
+      # this is wrong, not sure how to fix.
+      self.confs
       .where(tester_id: current_user_id)
+      .order("created_at")
+      .group(:card_id)
+      .last
+    end
   end
 
   # backend sent through jbuilder - first fetch of the mastery...
   # how does this interact with the frontend?
   def mastery_score(current_user_id)
     if self.cards.count > 0
-      sum = self.get_user_score(current_user_id).sum(:score)
+      deck_score = self.get_user_score(current_user_id)
+      sum = deck_score.sum(:score)
       max_score = self.cards.count * 5
       sum * 100 / max_score
     else
