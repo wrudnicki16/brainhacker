@@ -12,10 +12,10 @@ export const receiveCards = (cards) => {
   };
 };
 
-export const receiveCard = (payload) => {
+export const receiveCard = (card) => {
   return {
     type: RECEIVE_CARD,
-    payload
+    card
   };
 };
 

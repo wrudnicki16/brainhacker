@@ -2,17 +2,20 @@ class Api::ConfsController < ApplicationController
   def create
     @conf = Conf.new(conf_params)
     @conf.tester_id = current_user.id
-    @conf.card_id = params[:card_id]
+    # @conf.card_id = params[:card_id]
+    @card = Card.find_by(id: @conf.card_id)
 
-    @deck = Card.find_by(id: @conf.card_id).deck
     if @conf.save
+
       # what should I be rendering here?
       # deck to re-render the mastery of the deck?
-      render "/api/decks/show"
+      render :show
     else
       render json: @conf.errors.full_messages
     end
   end
+
+
 
   private
 

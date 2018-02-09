@@ -2,10 +2,10 @@ import * as ConfAPIUtil from '../util/conf_api_util';
 
 export const RECEIVE_CONF = "RECEIVE_CONF";
 
-export const receiveConf = (deck) => {
+export const receiveConf = (conf) => {
   return {
     type: RECEIVE_CONF,
-    deck
+    conf
   };
 };
 
@@ -13,5 +13,5 @@ export const createConf = (payload) => dispatch => {
   // receive standard payload
   return ConfAPIUtil.createConf(payload)
   // get back the deck show jbuilder data, send conf action.
-      .then((payload1) => dispatch(receiveConf(payload1.deck)));
+      .then((conf) => dispatch(receiveConf(conf)));
 };

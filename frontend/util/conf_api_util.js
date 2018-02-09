@@ -20,7 +20,18 @@
 export const createConf = (payload) => {
   return $.ajax({
     method: "POST",
-    url: `/api/cards/${payload.conf.cardId}/confs`,
+    url: `/api/confs`,
     data: payload
   });
 };
+
+
+// export const fetchConf = (cardId) => (
+//   $.ajax({
+//     method: 'GET',
+//     url: `/api/cards/${cardId}/`,
+//     data: {
+//       studyscore: { card_id: cardId }
+//     }
+//   })
+// );

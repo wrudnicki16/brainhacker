@@ -39,10 +39,11 @@ class Deck < ApplicationRecord
   # backend sent through jbuilder - first fetch of the mastery...
   # how does this interact with the frontend?
   def mastery_score(current_user_id)
+    debugger
     if self.cards.count > 0
       deck_confs = self.get_user_confs(current_user_id)
       deck_scores = get_user_scores(deck_confs)
-      sum_scores = deck_scores.reduce(:+)
+      sum_scores = deck_scores.reduce(:+) ? deck_scores.reduce(:+) : 0
       max_score = self.cards.count * 5
       sum_scores * 100 / max_score
     else
