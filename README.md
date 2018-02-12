@@ -34,7 +34,7 @@ My cards, in order to update appropriately without a submit button, needed to up
 ## Keeping code DRY
 I am always trying to keep code dry when developing, abstracting information in the form of helper methods and partials so I avoid repeated code, making my code readable for both myself and my peers.
 
-<img width="691" alt="screen shot 2018-02-09 at 3 39 59 pm" src="https://user-images.githubusercontent.com/6581671/36055242-d984f46a-0daf-11e8-83e5-d6de18faba8d.png">
+<img width="691" alt="screen shot 2018-02-09 at 3 39 59 pm" src="https://github.com/wrudnicki16/brainhacker/blob/master/Screen%20Shot%202018-02-12%20at%201.33.07%20AM.png">
 
 ## Future Features
 
