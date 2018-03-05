@@ -1,4 +1,4 @@
-# [Brainhacker](https://brainhacker1.herokuapp.com/)
+# Brainhacker
 
 [Live demo here!](https://brainhacker1.herokuapp.com/)
 
