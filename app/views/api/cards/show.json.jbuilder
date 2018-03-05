@@ -1,4 +1,4 @@
-json.extract! @conf, :id, :front, :back, :deck_id
+json.extract! @card, :id, :front, :back, :deck_id
 
 # get most recent conf for current user here?
 # json.conf do
