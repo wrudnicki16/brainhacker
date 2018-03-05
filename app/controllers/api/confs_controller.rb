@@ -20,7 +20,6 @@ class Api::ConfsController < ApplicationController
   private
 
   def conf_params
-    debugger
     params.require(:conf).permit(:score, :card_id)
   end
 end

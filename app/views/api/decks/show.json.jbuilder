@@ -16,7 +16,7 @@ json.confs do
       json.extract! card.confs
                         .where(tester_id: current_user.id)
                         .order("created_at desc")
-                        .limit(1)[0], :id, :score, :card_id
+                        .limit(1)[0], :id, :score, :card_id, :tester_id
     end
   end
 end

@@ -27,8 +27,9 @@ class DeckShow extends React.Component {
             </button>
             <span className="deck-title-span">{deck.title}</span>
           </div>
-          <button className="deck-study">
-            Study
+          <button onClick={() => this.props.history.push(`/study/${deckId}`)}
+                  className="deck-study">
+                  Study
           </button>
         </div>
         <div className="deck-cards-divider"></div>

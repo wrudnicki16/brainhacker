@@ -8,6 +8,7 @@ import { logout } from '../actions/session_actions';
 import DeckIndexSidebarContainer from './deck/deck_index_sidebar_container';
 import DeckFormContainer from './deck/deck_form_container';
 import DeckShowContainer from './deck/deck_show_container';
+import StudyShowContainer from './study/study_show_container';
 const App = () => (
   <div>
     <header>
@@ -22,6 +23,7 @@ const App = () => (
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <ProtectedRoute path="/decks" component={DeckIndexSidebarContainer} />
+        <ProtectedRoute path="/study/:deckId" component={StudyShowContainer} />
         <AuthRoute path="/" component={SessionFormContainer} />
       </Switch>
       <Switch>
