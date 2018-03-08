@@ -99,6 +99,7 @@
 .CircularProgressbar {
   width: 70%;
   text-anchor: middle;
+  dominant-baseline: central;
 }
 
 .CircularProgressbar-path       { stroke: #2b9292; }
