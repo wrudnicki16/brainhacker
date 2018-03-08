@@ -55,8 +55,6 @@
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
-	position: relative;
 }
 
 /* hide back of pane during swap */
@@ -67,6 +65,10 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* front pane, placed above back */
