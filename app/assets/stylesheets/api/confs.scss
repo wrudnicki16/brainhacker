@@ -15,12 +15,6 @@
   background-color: #272829;
 }
 
-.study-sidebar {
-  width: calc(28vw - 55px);
-  min-width: 250px;
-  background-color: #393c3e;
-}
-
 .study-card {
   width: 100%;
   perspective: 1000px;
@@ -29,14 +23,9 @@
   align-items: center;
   flex-direction: column;
 }
-/* entire container, keeps perspective */
 .card-show input {
   display: none;
 }
-/* flip the pane when hovered */
-// .card-show:active .flipper, .card-show.active .flipper .card-show.flip {
-// 	transform: rotateY(-180deg);
-// }
 
 :checked + .flipper {
   transform: rotateY(-180deg);
@@ -51,13 +40,11 @@
 	height: 480px;
 }
 
-/* flip speed goes here */
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
 }
 
-/* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
   background-color: #fff;
@@ -69,16 +56,51 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 5px solid #2b9292;
 }
 
-/* front pane, placed above back */
 .front {
 	z-index: 2;
-	/* for firefox 31 */
 	transform: rotateY(0deg);
 }
 
-/* back, initially hidden pane */
 .back {
 	transform: rotateY(-180deg);
 }
+.study-sidebar {
+  width: calc(36vw - 55px);
+  min-width: 250px;
+  background-color: #393c3e;
+  color: #fff;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.study-title {
+  // background-color: #1c6161; #0a7575 #2b9292
+  align-self: stretch;
+  background-color: #4e4e4e;
+  padding: 15px;
+}
+
+.study-title span {
+  color: #c3c3c3;
+}
+
+.study-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.CircularProgressbar {
+  width: 70%;
+  text-anchor: middle;
+}
+
+.CircularProgressbar-path       { stroke: #2b9292; }
+.CircularProgressbar-trail      { stroke: #c3c3c3; }
+.CircularProgressbar-text       { fill: #fff; }
