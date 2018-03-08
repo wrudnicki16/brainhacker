@@ -9,6 +9,13 @@ class StudyShow extends React.Component {
     };
   }
 
+  studyCard() {
+    const { createConf, cards } = this.props;
+    const { curIdx } = this.state;
+    createConf( { conf: { card_id: cards[curIdx]}});
+
+  }
+
   componentDidMount() {
     const { fetchDeck, deckId } = this.props;
     fetchDeck(deckId);
@@ -17,8 +24,6 @@ class StudyShow extends React.Component {
   render() {
     const { createConf, deck, cards } = this.props;
     const { curIdx } = this.state;
-    let flipped = true;
-    debugger;
     if (deck) {
       return (
         <div className="study-show-page">
@@ -29,12 +34,17 @@ class StudyShow extends React.Component {
           <StudySidebar curIdx={curIdx} />
 
           <div className="study-card">
-
-            <div className="card-show">
-              {
-                flipped ? cards[curIdx].back : cards[curIdx].front
-              }
-            </div>
+            <label className="card-show">
+              <input type="checkbox" />
+            	<div className="flipper">
+            		<div className="front">
+                  { cards[curIdx].front }
+            		</div>
+            		<div className="back">
+                  { cards[curIdx].back }
+            		</div>
+            	</div>
+            </label>
 
             <p> How well did you know this?</p>
             <div className="study-buttons">

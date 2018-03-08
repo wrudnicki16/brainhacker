@@ -16,6 +16,67 @@
 }
 
 .study-sidebar {
-  width: calc(30vw - 47px);
+  width: calc(28vw - 55px);
+  min-width: 250px;
   background-color: #393c3e;
+}
+
+.study-card {
+  width: 100%;
+  perspective: 1000px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+/* entire container, keeps perspective */
+.card-show input {
+  display: none;
+}
+/* flip the pane when hovered */
+// .card-show:active .flipper, .card-show.active .flipper .card-show.flip {
+// 	transform: rotateY(-180deg);
+// }
+
+:checked + .flipper {
+  transform: rotateY(-180deg);
+}
+
+.card-show {
+  margin: 35px auto;
+}
+
+.card-show, .front, .back {
+  width: 60vw;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0,0,0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(-180deg);
 }
