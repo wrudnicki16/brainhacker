@@ -28,6 +28,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
     "postinstall": "webpack"
   },
   "engines": {
