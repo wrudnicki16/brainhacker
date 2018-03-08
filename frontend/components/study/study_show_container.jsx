@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => {
   let deckId = ownProps.match.params.deckId;
   let deck = state.entities.decks[deckId];
   let cards = Object.values(state.entities.cards);
-  debugger;
   return {
     deckId,
     deck: state.entities.decks[deckId],

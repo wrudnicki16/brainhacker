@@ -10,6 +10,7 @@
     "hover.css": "^2.2.1",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
+    "react-circular-progressbar": "^0.8.0",
     "react-dom": "^16.2.0",
     "react-fontawesome": "^1.6.1",
     "react-redux": "^5.0.6",

@@ -9,11 +9,12 @@ class StudyShow extends React.Component {
     };
   }
 
-  studyCard() {
+  studyCard(score) {
     const { createConf, cards } = this.props;
     const { curIdx } = this.state;
-    createConf( { conf: { card_id: cards[curIdx]}});
-
+    debugger;
+    createConf( { conf: { card_id: cards[curIdx].id, score: score}});
+    this.setState({ curIdx: (curIdx + 1) % cards.length});
   }
 
   componentDidMount() {
@@ -31,7 +32,7 @@ class StudyShow extends React.Component {
 
           </div>
 
-          <StudySidebar curIdx={curIdx} />
+          <StudySidebar curIdx={curIdx} deck={deck}/>
 
           <div className="study-card">
             <label className="card-show">
@@ -48,13 +49,13 @@ class StudyShow extends React.Component {
 
             <p> How well did you know this?</p>
             <div className="study-buttons">
-              <button onClick={() => createConf({ conf: { card_id: curIdx, score: 1}})}>
+              <button onClick={() => this.studyCard(1)}>
                 Not at all
               </button>
-              <button onClick={() => createConf({ conf: { card_id: curIdx, score: 2}})} />
-              <button onClick={() => createConf({ conf: { card_id: curIdx, score: 3}})} />
-              <button onClick={() => createConf({ conf: { card_id: curIdx, score: 4}})} />
-              <button onClick={() => createConf({ conf: { card_id: curIdx, score: 5}})}>
+              <button onClick={() => this.studyCard(2)} />
+              <button onClick={() => this.studyCard(3)} />
+              <button onClick={() => this.studyCard(4)} />
+              <button onClick={() => this.studyCard(5)}>
                 Perfectly
               </button>
             </div>
