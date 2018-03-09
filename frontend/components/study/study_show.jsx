@@ -5,8 +5,35 @@ class StudyShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      curIdx: 0
+      curIdx: 0,
+      flipped: false
     };
+    this.switchSidesWithTransition = this.switchSidesWithTransition.bind(this);
+    this.flip = this.flip.bind(this);
+  }
+
+  flip() {
+    const { flipped } = this.state;
+    this.setState({
+      flipped: !flipped
+    });
+  }
+
+  switchSidesWithTransition(transition) {
+    const { flipped } = this.state;
+    let card = document.getElementById("check");
+    let flipper = document.getElementById("flipper");
+    if (transition) {
+      card.checked = !flipped;
+    } else {
+      flipper.classList.toggle("notransition");
+      card.checked = !flipped;
+      setTimeout(() => {
+        flipper.classList.toggle("notransition");
+      }, 600);
+    }
+
+    this.flip();
   }
 
   studyCard(score) {
@@ -14,20 +41,12 @@ class StudyShow extends React.Component {
     const { curIdx } = this.state;
 
     // this is the frontend way, much faster, but maybe computationally wrong with Ruby's floor division
-    // if (!this.state.masteryScore) {
-    //   this.setState({ masteryScore: deck.masteryScore });
-    // }
-    // const masteryScore = this.state.masteryScore;
+    // look at  "Add mastery route, mastery now up to date" commit for comments
     let curCardId = cards[curIdx].id;
-    // let oldScore = confs[curCardId].score;
-    // let sumScores = (masteryScore * (cards.count * 5)) / 100;
-    // sumScores += (score - oldScore);
-    // let newMasteryScore = (sumScores * 100) / (cards.count * 5);
-
     createConf( { conf: { card_id: curCardId, score: score}});
     this.setState({ curIdx: (curIdx + 1) % cards.length});
-    // this.setState({ masteryScore: newMasteryScore});
     getMastery(deckId);
+    this.switchSidesWithTransition(false);
   }
 
   componentDidMount() {
@@ -37,8 +56,30 @@ class StudyShow extends React.Component {
 
   render() {
     const { createConf, deck, cards } = this.props;
-    const { curIdx } = this.state;
+    const { curIdx, flipped } = this.state;
     if (deck) {
+      let buttons = flipped ? (
+        <div>
+          <p> How well did you know this?</p>
+          <div className="study-buttons">
+            <button onClick={() => this.studyCard(1)}>
+              Not at all
+            </button>
+            <button onClick={() => this.studyCard(2)} />
+            <button onClick={() => this.studyCard(3)} />
+            <button onClick={() => this.studyCard(4)} />
+            <button onClick={() => this.studyCard(5)}>
+              Perfectly
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="study-buttons">
+          <button onClick={() => this.switchSidesWithTransition(true)}>
+            Reveal Answer
+          </button>
+        </div>
+      );
       return (
         <div className="study-show-page">
           <div className="nav-sidebar">
@@ -49,8 +90,9 @@ class StudyShow extends React.Component {
 
           <div className="study-card">
             <label className="card-show">
-              <input type="checkbox" />
-            	<div className="flipper">
+              <input id="check" type="checkbox"
+                onClick={() => this.flip()} />
+            	<div id="flipper" className="flipper">
             		<div className="front">
                   { cards[curIdx].front }
             		</div>
@@ -59,19 +101,7 @@ class StudyShow extends React.Component {
             		</div>
             	</div>
             </label>
-
-            <p> How well did you know this?</p>
-            <div className="study-buttons">
-              <button onClick={() => this.studyCard(1)}>
-                Not at all
-              </button>
-              <button onClick={() => this.studyCard(2)} />
-              <button onClick={() => this.studyCard(3)} />
-              <button onClick={() => this.studyCard(4)} />
-              <button onClick={() => this.studyCard(5)}>
-                Perfectly
-              </button>
-            </div>
+            {buttons}
           </div>
         </div>
       );

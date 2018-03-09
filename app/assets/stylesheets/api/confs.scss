@@ -69,6 +69,11 @@
 .back {
 	transform: rotateY(-180deg);
 }
+
+.notransition {
+  transition: none !important;
+}
+
 .study-sidebar {
   width: calc(36vw - 55px);
   min-width: 250px;
