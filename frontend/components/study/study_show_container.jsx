@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   let cards = Object.values(state.entities.cards);
   return {
     deckId,
-    deck: state.entities.decks[deckId],
+    deck,
     cards
   };
 };

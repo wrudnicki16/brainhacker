@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import StudySidebar from './study_sidebar';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
@@ -16,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   null
-)(StudySidebar);
+)(StudySidebar));
