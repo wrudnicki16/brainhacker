@@ -33,6 +33,15 @@ class Api::DecksController < ApplicationController
 
   end
 
+  def mastery
+    @deck = Deck.find_by(id: params[:id])
+    if @deck
+      render :mastery
+    else
+      render json: ['Deck not found'], status: 404
+    end
+  end
+
   private
 
   def deck_params

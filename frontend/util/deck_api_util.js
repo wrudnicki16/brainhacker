@@ -30,3 +30,11 @@ export const deleteDeck = (id) => {
     error: err => console.log(err)
   });
 };
+
+export const getMastery = (id) => {
+  return $.ajax({
+    method: "GET",
+    url: `/api/mastery/${id}`,
+    error: err => console.log(err)
+  });
+};

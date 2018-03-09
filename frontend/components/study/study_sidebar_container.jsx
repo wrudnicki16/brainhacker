@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
   const deckId = ownProps.match.params.deckId;
   const deck = state.entities.decks[deckId];
-  debugger;
   return {
     numCards: Object.keys(state.entities.cards).length,
     deck,

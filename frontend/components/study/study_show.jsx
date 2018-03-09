@@ -1,5 +1,5 @@
 import React from 'react';
-import StudySidebar from './study_sidebar';
+import StudySidebarContainer from './study_sidebar_container';
 
 class StudyShow extends React.Component {
   constructor(props) {
@@ -10,11 +10,24 @@ class StudyShow extends React.Component {
   }
 
   studyCard(score) {
-    const { createConf, cards } = this.props;
+    const { createConf, getMastery, cards, deckId, numCards, confs } = this.props;
     const { curIdx } = this.state;
-    debugger;
-    createConf( { conf: { card_id: cards[curIdx].id, score: score}});
+
+    // this is the frontend way, much faster, but maybe computationally wrong with Ruby's floor division
+    // if (!this.state.masteryScore) {
+    //   this.setState({ masteryScore: deck.masteryScore });
+    // }
+    // const masteryScore = this.state.masteryScore;
+    let curCardId = cards[curIdx].id;
+    // let oldScore = confs[curCardId].score;
+    // let sumScores = (masteryScore * (cards.count * 5)) / 100;
+    // sumScores += (score - oldScore);
+    // let newMasteryScore = (sumScores * 100) / (cards.count * 5);
+
+    createConf( { conf: { card_id: curCardId, score: score}});
     this.setState({ curIdx: (curIdx + 1) % cards.length});
+    // this.setState({ masteryScore: newMasteryScore});
+    getMastery(deckId);
   }
 
   componentDidMount() {
@@ -32,7 +45,7 @@ class StudyShow extends React.Component {
 
           </div>
 
-          <StudySidebar curIdx={curIdx} deck={deck}/>
+          <StudySidebarContainer curIdx={curIdx} />
 
           <div className="study-card">
             <label className="card-show">

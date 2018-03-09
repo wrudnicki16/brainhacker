@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     end
     resources :cards, only: [:show, :update, :destroy]
     resources :confs, only: [:create, :show, :index]
+    get 'mastery/:id', to: 'decks#mastery'
   end
+
 
   root "static_pages#root"
 end

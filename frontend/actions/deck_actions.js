@@ -4,7 +4,7 @@ export const RECEIVE_DECKS = "RECEIVE_DECKS";
 export const RECEIVE_DECK = "RECEIVE_DECK";
 export const RECEIVE_DECK_ERRORS = "RECEIVE_DECK_ERRORS";
 export const REMOVE_DECK = "REMOVE_DECK";
-
+export const RECEIVE_MASTERY = "RECEIVE_MASTERY";
 
 export const receiveDecks = (decks) => {
   return {
@@ -16,6 +16,13 @@ export const receiveDecks = (decks) => {
 export const receiveDeck = (payload) => {
   return {
     type: RECEIVE_DECK,
+    payload
+  };
+};
+
+export const receiveMastery = (payload) => {
+  return {
+    type: RECEIVE_MASTERY,
     payload
   };
 };
@@ -54,4 +61,9 @@ export const fetchDeck = (id) => dispatch => {
 export const fetchDecks = () => dispatch => {
   return DeckAPIUtil.fetchDecks()
       .then((decks) => dispatch(receiveDecks(decks)));
+};
+
+export const getMastery = (id) => dispatch => {
+  return DeckAPIUtil.getMastery(id)
+      .then((deck) => dispatch(receiveMastery(deck)));
 };
