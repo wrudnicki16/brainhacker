@@ -9,12 +9,6 @@
   display: flex;
 }
 
-.nav-sidebar {
-  width: 55px;
-  height: 100%;
-  background-color: #272829;
-}
-
 .study-card {
   width: 100%;
   perspective: 1000px;
@@ -37,7 +31,7 @@
 
 .card-show, .front, .back {
   width: 60vw;
-	height: 480px;
+	height: 70vh;
 }
 
 .flipper {
@@ -56,7 +50,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 5px solid #2b9292;
   font-size: 24px;
   font-weight: 300;
 }
@@ -74,45 +67,52 @@
   transition: none !important;
 }
 
-.study-sidebar {
-  width: calc(36vw - 55px);
-  min-width: 250px;
-  background-color: #393c3e;
+.study-buttons {
+  width: 60vw;
+  box-shadow: 0 3px 5px rgba(0,0,0, 0.5);
+  display: flex;
+}
+
+.study-buttons button {
+  height: 10vh;
+  width: 20%;
   color: #fff;
+  outline: none;
+  border: none;
+  font-size: 18px;
   font-weight: 300;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.study-title {
-  // background-color: #1c6161; #0a7575 #2b9292
-  align-self: stretch;
-  background-color: #4e4e4e;
-  padding: 15px;
+.study-prompt {
+  margin-bottom: 1px;
 }
 
-.study-title span {
-  color: #c3c3c3;
+.study-prompt p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 0;
 }
 
-.study-progress {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 35px 20px;
+#study-1 {
+  background-color: #d2009e;
 }
 
-.CircularProgressbar {
-  width: 70%;
-  text-anchor: middle;
-  dominant-baseline: central;
+#study-2 {
+  background-color: #ff843e;
+}
+#study-3 {
+  background-color: #fd0;
+}
+#study-4 {
+  background-color: #88d00b;
+}
+#study-5 {
+  background-color: #3f8fcd;
 }
 
-.CircularProgressbar-path       {
-  stroke: #2b9292;
-  transition: stroke-dashoffset 0.5s ease 0s;
-  // transition: transform 500ms ease-in-out;
+#reveal {
+  width: 100%;
+  color: #2b9292;
+  background-color: #ccc;
 }
-.CircularProgressbar-trail      { stroke: #c3c3c3; }
-.CircularProgressbar-text       { fill: #fff; }

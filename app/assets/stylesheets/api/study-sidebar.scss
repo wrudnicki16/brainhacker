@@ -1,0 +1,47 @@
+.nav-sidebar {
+  width: 55px;
+  height: 100%;
+  background-color: #272829;
+}
+
+.study-sidebar {
+  width: calc(36vw - 55px);
+  min-width: 250px;
+  background-color: #393c3e;
+  color: #fff;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.study-title {
+  // background-color: #1c6161; #0a7575 #2b9292
+  align-self: stretch;
+  background-color: #4e4e4e;
+  padding: 15px;
+}
+
+.study-title span {
+  color: #c3c3c3;
+}
+
+.study-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px 20px;
+}
+
+.CircularProgressbar {
+  width: 70%;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.CircularProgressbar-path       {
+  stroke: #2b9292;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+.CircularProgressbar-trail      { stroke: #c3c3c3; }
+.CircularProgressbar-text       { fill: #fff; }

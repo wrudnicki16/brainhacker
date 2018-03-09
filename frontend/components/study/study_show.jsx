@@ -61,25 +61,28 @@ class StudyShow extends React.Component {
     const { curIdx, flipped } = this.state;
     if (deck) {
       let buttons = flipped ? (
-        <div>
+        <div className="study-prompt">
           <p> How well did you know this?</p>
           <div className="study-buttons">
-            <button onClick={() => this.studyCard(1)}>
-              Not at all
+            <button id="study-1" onClick={() => this.studyCard(1)}>
+              1 Not at all
             </button>
-            <button onClick={() => this.studyCard(2)} />
-            <button onClick={() => this.studyCard(3)} />
-            <button onClick={() => this.studyCard(4)} />
-            <button onClick={() => this.studyCard(5)}>
-              Perfectly
+            <button id="study-2" onClick={() => this.studyCard(2)}>2</button>
+            <button id="study-3" onClick={() => this.studyCard(3)}>3</button>
+            <button id="study-4" onClick={() => this.studyCard(4)}>4</button>
+            <button id="study-5" onClick={() => this.studyCard(5)}>
+              5 Perfectly
             </button>
           </div>
         </div>
       ) : (
-        <div className="study-buttons">
-          <button onClick={() => this.switchSidesWithTransition(true)}>
-            Reveal Answer
-          </button>
+        <div className="study-prompt">
+          <p>&nbsp;</p>
+          <div className="study-buttons">
+            <button id="reveal" onClick={() => this.switchSidesWithTransition(true)}>
+              Reveal Answer
+            </button>
+          </div>
         </div>
       );
       return (
