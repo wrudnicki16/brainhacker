@@ -30,7 +30,7 @@ class StudyShow extends React.Component {
       card.checked = !flipped;
       setTimeout(() => {
         flipper.classList.toggle("notransition");
-      }, 600);
+      }, 3);
     }
 
     this.flip();
@@ -45,8 +45,10 @@ class StudyShow extends React.Component {
     let curCardId = cards[curIdx].id;
     createConf( { conf: { card_id: curCardId, score: score}});
     this.setState({ curIdx: (curIdx + 1) % cards.length});
-    getMastery(deckId);
     this.switchSidesWithTransition(false);
+    setTimeout(() => {
+      getMastery(deckId);
+    }, 100);
   }
 
   componentDidMount() {

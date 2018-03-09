@@ -109,6 +109,10 @@
   dominant-baseline: central;
 }
 
-.CircularProgressbar-path       { stroke: #2b9292; }
+.CircularProgressbar-path       {
+  stroke: #2b9292;
+  transition: stroke-dashoffset 0.5s ease 0s;
+  // transition: transform 500ms ease-in-out;
+}
 .CircularProgressbar-trail      { stroke: #c3c3c3; }
 .CircularProgressbar-text       { fill: #fff; }
