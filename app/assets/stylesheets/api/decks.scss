@@ -195,6 +195,11 @@
   outline: none;
 }
 
+.deck-study:hover {
+  background-color: #257777;
+  transition: 0.2s;
+}
+
 .deck-cards-divider {
   width: 100%;
   border: 0.5px solid #ddd;

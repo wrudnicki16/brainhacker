@@ -2,6 +2,49 @@
   width: 55px;
   height: 100%;
   background-color: #272829;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-sidebar button {
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #c3c3c3;
+  margin-top: 7vh;
+}
+
+.nav-sidebar button:first-child {
+  margin-top: 2vh;
+}
+
+.nav-sidebar-logo {
+  background-image: image_url("brain_hacking2.png");
+  background-size: cover;
+  text-decoration: none;
+  width: 27px;
+  height: 18px;
+}
+
+.study-done {
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 10px;
+  width: 100px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #2b9292;
+  border: 1px solid #2b9292;
+  outline: none;
+  text-align: center;
+}
+
+.study-done:hover {
+  background-color: #39afaf;
+  transition: 0.2s;
 }
 
 .study-sidebar {

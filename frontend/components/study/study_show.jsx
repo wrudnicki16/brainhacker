@@ -1,5 +1,6 @@
 import React from 'react';
 import StudySidebarContainer from './study_sidebar_container';
+import FontAwesome from 'react-fontawesome';
 
 class StudyShow extends React.Component {
   constructor(props) {
@@ -46,7 +47,8 @@ class StudyShow extends React.Component {
     createConf( { conf: { card_id: curCardId, score: score}});
     this.setState({ curIdx: (curIdx + 1) % cards.length});
     this.switchSidesWithTransition(false);
-    setTimeout(() => {
+
+    setTimeout(() => { // Potential bugs in updating the mastery avoided here
       getMastery(deckId);
     }, 100);
   }
@@ -65,13 +67,15 @@ class StudyShow extends React.Component {
           <p> How well did you know this?</p>
           <div className="study-buttons">
             <button id="study-1" onClick={() => this.studyCard(1)}>
-              1 Not at all
+              1
+              <small>Not at all</small>
             </button>
             <button id="study-2" onClick={() => this.studyCard(2)}>2</button>
             <button id="study-3" onClick={() => this.studyCard(3)}>3</button>
             <button id="study-4" onClick={() => this.studyCard(4)}>4</button>
             <button id="study-5" onClick={() => this.studyCard(5)}>
-              5 Perfectly
+              5
+              <small>Perfectly</small>
             </button>
           </div>
         </div>
@@ -88,7 +92,18 @@ class StudyShow extends React.Component {
       return (
         <div className="study-show-page">
           <div className="nav-sidebar">
-
+            <button
+              onClick= {() => this.props.history.push(`/decks`)}
+              className="nav-sidebar-logo">
+            </button>
+            <button
+              onClick= {() => this.props.history.push(`/decks/${deck.id}`)}>
+              <FontAwesome className="fas fa-book" name="book" size="2x"/>
+            </button>
+            <button
+              onClick= {() => this.props.history.push(`/search`)}>
+              <FontAwesome className="fas fa-search" name="search" size="2x"/>
+            </button>
           </div>
 
           <StudySidebarContainer curIdx={curIdx} />
