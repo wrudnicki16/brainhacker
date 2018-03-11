@@ -27,7 +27,7 @@ class DeckIndexSidebar extends React.Component {
               {decks}
             </div>
           </div>
-          <div className="splash-overlay"></div>
+          <div className="splash-overlay"><i className="fa fa-arrow-left"></i> &nbsp; &nbsp; View, Create Decks</div>
         </div>
       );
     } else {

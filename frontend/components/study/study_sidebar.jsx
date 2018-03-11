@@ -15,7 +15,7 @@ class StudySidebar extends React.Component {
                onClick={() => this.props.history.push(`/decks/${deck.id}`)}>
                <FontAwesome className="fas fa-chevron-left"
                             name="chevron-left"
-                            size="1x"/> &nbsp; Done
+                            size="2x"/> &nbsp; Done
           </div>
           <div className="study-progress">
             <CircularProgressbar
