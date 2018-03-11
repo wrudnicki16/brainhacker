@@ -11,7 +11,6 @@ const cardsReducer = (state = {}, action) => {
     case RECEIVE_CARDS:
       return merge({}, action.cards);
     case RECEIVE_CARD:
-      debugger;
       return merge({}, state, { [action.card.id]: action.card });
     case REMOVE_CARD:
       let newState = merge({}, state);
