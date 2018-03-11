@@ -13,10 +13,12 @@ end
 json.confs do
   @deck.cards.each do |card|
     json.set! card.id do
-      json.extract! card.confs
-                        .where(tester_id: current_user.id)
-                        .order("created_at desc")
-                        .limit(1)[0], :id, :score, :card_id, :tester_id
+      if !card.confs.empty?
+        json.extract! card.confs
+          .where(tester_id: current_user.id)
+          .order("created_at desc")
+          .limit(1)[0], :id, :score, :card_id, :tester_id
+      end
     end
   end
 end

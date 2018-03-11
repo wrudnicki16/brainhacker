@@ -1,5 +1,6 @@
 import React from 'react';
 import CircularProgressbar from 'react-circular-progressbar';
+import FontAwesome from 'react-fontawesome';
 
 class StudySidebar extends React.Component {
   render() {
@@ -9,6 +10,12 @@ class StudySidebar extends React.Component {
         <div className="study-sidebar">
           <div className="study-title">
             <span>Studying: </span> {deck.title}
+          </div>
+          <div className="study-done"
+               onClick={() => this.props.history.push(`/decks/${deck.id}`)}>
+               <FontAwesome className="fas fa-chevron-left"
+                            name="chevron-left"
+                            size="1x"/> &nbsp; Done
           </div>
           <div className="study-progress">
             <CircularProgressbar
