@@ -77,6 +77,7 @@
     background-color: #27b574;
     transition-duration: 0.2s;
     outline: none;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.5);
   }
 
   button:hover {
@@ -170,6 +171,7 @@
       border: 1px solid #27b574;
       -webkit-transition-duration: 0.2s;
       transition-duration: 0.2s;
+      box-shadow: 0 2px 4px rgba(0,0,0, 0.5);
     }
 
     input[type="submit"]:hover,
@@ -255,6 +257,7 @@
   background-color: #2b9292;
   border: 1px solid #2b9292;
   outline: none;
+  box-shadow: 0 2px 4px rgba(0,0,0, 0.5);
 }
 
 .deck-study:hover {
