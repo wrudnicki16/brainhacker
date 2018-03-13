@@ -61,8 +61,8 @@
   background-color: #eee;
   font-weight: 300;
   border-right: 1px solid #ddd;
-  overflow-y: scroll;
   min-width: 355px;
+  height: calc(100vh - 56px);
   h1 {
     font-weight: 300;
   }
@@ -141,6 +141,11 @@
   border-bottom: 1px solid #ddd;
   height: 75px;
   min-width: 355px;
+}
+
+.decks-body {
+  overflow-y: scroll;
+  height: calc(100vh - 135px);
 }
 
 .deck-create-form {
