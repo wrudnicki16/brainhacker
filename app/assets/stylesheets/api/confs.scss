@@ -82,11 +82,21 @@
   font-size: 22px;
   font-weight: 300;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
 }
 
 .study-buttons small {
+  width: 100%;
   display: block;
   font-size: 12px;
+  position: absolute;
+  text-align: center;
+  bottom: 10%;
 }
 
 .study-prompt {
@@ -115,6 +125,10 @@
 }
 #study-5 {
   background-color: #3f8fcd;
+}
+
+#study-5 small {
+  margin-left: -5.5vw;
 }
 
 #reveal {
