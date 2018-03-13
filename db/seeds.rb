@@ -6,12 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([{username: "Demo", password: "password"}]);
+users = User.create([
+  {username: "Demo", password: "password"},
+  {username: "wyattrud", password: "password"}
+]);
 
 decks = Deck.create([
   { title: "Psychology", creator_id: 1 },
+  { title: "Sleep", creator_id: 2 },
+
 ]);
 
 cards = Card.create([
-  { front: "Function of forgetting", back: "e^-x", deck_id: 1 }
+  { front: "Function of forgetting", back: "e^-x", deck_id: 1 },
+
+##### sleep ######
+  { front: "What is the average half-life of caffeine?", back: "5-7 hours", deck_id: 2 },
+  { front: "", back: "", deck_id: 2 },
   ])
