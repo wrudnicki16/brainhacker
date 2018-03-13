@@ -46,12 +46,12 @@ cards = Card.create([
   { front: "How do pigeons sleep in groups while remaining vigilant?", back: "The birds will first line up in a row. All birds will then go to sleep besides those at the far left and right ends
     of the row, who will have opposing sides of the brain turned off, leaving the corresponding left and right eyes open. ", deck_id: 2 },
   ##### Web Design and Psychology ######
-  { front: "Why is eyetracking data unreliable?", back: "Inattentional blindness", deck_id: 2 },
-  { front: "What colors should you avoid putting together?", back: "Blue and red or green and red", deck_id: 2 },
-  { front: "What is a good color scheme for avoiding color blindness issues, besides shades of grey?", back: "Shades of yellow, orange, and tan work well with both kinds of color deficiencies", deck_id: 2 },
-  { front: "How do w raed ltters taht aer all jmumlbed up? How does this explain how we read in general?", back: "We use previous knowledge to anticipate what will come next.", deck_id: 2 },
-  { front: "Why are faces good on a page?", back: "People recognize and react to faces faster and with more emotion than anything else on the page", deck_id: 2 },
-  { front: "What makes a button desirable to press, as opposed to one that does not?", back: "Use of shading", deck_id: 2 },
+  { front: "Why is eyetracking data unreliable?", back: "Inattentional blindness", deck_id: 3 },
+  { front: "What colors should you avoid putting together?", back: "Blue and red or green and red", deck_id: 3 },
+  { front: "What is a good color scheme for avoiding color blindness issues, besides shades of grey?", back: "Shades of yellow, orange, and tan work well with both kinds of color deficiencies", deck_id: 3 },
+  { front: "How do w raed ltters taht aer all jmumlbed up? How does this explain how we read in general?", back: "We use previous knowledge to anticipate what will come next.", deck_id: 3 },
+  { front: "Why are faces good on a page?", back: "People recognize and react to faces faster and with more emotion than anything else on the page", deck_id: 3 },
+  { front: "What makes a button desirable to press, as opposed to one that does not?", back: "Use of shading", deck_id: 3 },
 
   ##### Pair programming #####
 
