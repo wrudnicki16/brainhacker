@@ -25,7 +25,7 @@ cards = Card.create([
   { front: "Persistence functionality", back: "Memories which contain a strong emotional response will likely be useful in the future", deck_id: 1},
   { front: "This is the kind of info that can be given/ framed in a question after an event which alters the person's recollection of the event.", back: "misinformation effect", deck_id: 1},
   { front: "Whats the point of memory?", back: "supports making inferences which are adaptive in life circumstances and preserve metal energy.", deck_id: 1},
-  { front: "Inability to recognize faces" back: "Prosopagnosia", deck_id: 1},
+  { front: "Inability to recognize faces", back: "Prosopagnosia", deck_id: 1},
 
 ##### sleep ######
   { front: "What is the average half-life of caffeine?", back: "5-7 hours", deck_id: 2 },
