@@ -93,18 +93,37 @@
 
 .deck-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #666;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #777;
   width: 355px;
   height: 110px;
   transition-duration: 0.15s;
+  list-style: none;
+  padding: 15px 28px;
+  box-sizing: border-box;
 }
 
 .deck-content:hover {
   background-color: #2b9292;
   color: #fff;
   cursor: pointer;
+}
+
+.deck-content-title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.deck-content-first {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.deck-list {
+  margin-top: 5px;
+  font-size: 12px;
 }
 
 .deck-divider {
@@ -247,7 +266,7 @@
   width: 100%;
   border: 0.5px solid #ddd;
   height: 0;
-  margin: 30px 0;
+  margin-bottom: 30px;
 }
 
 .deck-title {
@@ -258,4 +277,8 @@
 }
 .deck-title-span {
   align-self: flex-start;
+}
+
+.deck-mastery {
+  margin: 20px 0px;
 }

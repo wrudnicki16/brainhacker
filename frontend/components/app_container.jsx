@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = ({ session }, ownProps) => {
   let studying = ownProps.location.pathname.indexOf("/study") > -1;
-  console.warn(ownProps.location.pathname.indexOf("/study"));
   return {
     studying
   };

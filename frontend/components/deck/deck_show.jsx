@@ -7,8 +7,6 @@ import DeleteModalContainer from '../modal/delete_modal_container';
 class DeckShow extends React.Component {
   componentDidMount() {
     const { deckId, decks } = this.props;
-    console.warn("component mounted HERE");
-    this.props.fetchDeck(this.props.deckId).then(console.warn);
   }
 
   deleteDeck(deck) {
@@ -31,6 +29,7 @@ class DeckShow extends React.Component {
                   Study
           </button>
         </div>
+        <div className="deck-mastery">Mastery: {`${deck.mastery_score}%`}</div>
         <div className="deck-cards-divider"></div>
         <CardIndexContainer />
       </div>
