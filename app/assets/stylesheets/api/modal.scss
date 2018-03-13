@@ -1,0 +1,82 @@
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 410px;
+  height: 275px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+
+  h2 {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
+
+  button {
+    padding: 14px 35px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  button:first-child {
+    color: #444;
+    width: 100%;
+    background-color: #eee;
+  }
+
+  button:first-child:hover {
+    background-color: #ddd;
+  }
+
+  button:nth-child(2) {
+    color: #fff;
+    width: 100%;
+    background-color: #2b9292;
+    border: none;
+    margin-left: 10px;
+  }
+
+  button:nth-child(2):hover {
+    background-color: #257777;
+  }
+
+  p {
+    font-family: 'Sanchez', 'sans-serif';
+    color: #272829;
+  }
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-buttons {
+  display: flex;
+  width: 100%;
+}
+
+.modal-delimiter {
+  border: 0.5px solid #aaa;
+  width: 170px;
+  margin: 10px;
+}

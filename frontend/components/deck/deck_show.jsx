@@ -2,6 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Redirect } from 'react-router';
 import CardIndexContainer from '../card/card_index_container';
+import DeleteModalContainer from '../modal/delete_modal_container';
 
 class DeckShow extends React.Component {
   componentDidMount() {
@@ -22,9 +23,7 @@ class DeckShow extends React.Component {
       <div className="deck-show-page">
         <div className="deck-header">
           <div className="deck-title">
-            <button onClick={() => this.deleteDeck(deck)} className="deck-delete">
-              <FontAwesome className="far fa-trash-alt" name="trash" size="5x"/>
-            </button>
+            <DeleteModalContainer />
             <span className="deck-title-span">{deck.title}</span>
           </div>
           <button onClick={() => this.props.history.push(`/study/${deckId}`)}
