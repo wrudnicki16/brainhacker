@@ -8,14 +8,17 @@
 
 users = User.create([
   {username: "Demo", password: "password"},
-  {username: "wyattrud", password: "password"}
+  {username: "wyattrud", password: "password"},
+  {username: "teacher", password: "password"}
 ])
 
 decks = Deck.create([
   { title: "Psychology", creator_id: 1 },
   { title: "Sleep", creator_id: 2 },
   { title: "Web Design and People", creator_id: 2 },
-
+  { title: "Spanish 1", creator_id: 3 },
+  { title: "German 1", creator_id: 3},
+  { title: "Dota 2 Items", creator_id: 2},
 ])
 
 cards = Card.create([
@@ -24,7 +27,7 @@ cards = Card.create([
   { front: "An example of episodic memory would be?", back: "Remembering a party on your 6th birthday", deck_id: 1 },
   { front: "Persistence functionality", back: "Memories which contain a strong emotional response will likely be useful in the future", deck_id: 1},
   { front: "This is the kind of info that can be given/ framed in a question after an event which alters the person's recollection of the event.", back: "misinformation effect", deck_id: 1},
-  { front: "Whats the point of memory?", back: "supports making inferences which are adaptive in life circumstances and preserve metal energy.", deck_id: 1},
+  { front: "Whats the point of memory?", back: "supports making inferences which are adaptive in life circumstances and preserve mental energy.", deck_id: 1},
   { front: "Inability to recognize faces", back: "Prosopagnosia", deck_id: 1},
 
 ##### sleep ######
@@ -53,6 +56,58 @@ cards = Card.create([
   { front: "Why are faces good on a page?", back: "People recognize and react to faces faster and with more emotion than anything else on the page", deck_id: 3 },
   { front: "What makes a button desirable to press, as opposed to one that does not?", back: "Use of shading", deck_id: 3 },
 
-  ##### Pair programming #####
+  ##### Spanish #######
+  { front: "Está cansado", back: "Is tired", deck_id: 4},
+  { front: "Se acuesta", back: "Goes to bed", deck_id: 4},
+  { front: "El dormitorio/ el cuarto", back: "The bedroom", deck_id: 4},
+  { front: "crackers", back: "galletas", deck_id: 4},
+  { front: "window", back: "ventana", deck_id: 4},
+  { front: "techo", back: "roof", deck_id: 4},
+  { front: "piso", back: "floor", deck_id: 4},
+  { front: "lata", back: "can", deck_id: 4},
+  { front: "Tiene un sueño/ una pesadilla", back: "Has a dream/ nightmare", deck_id: 4},
+  { front: "No puede salir", back: "Can’t leave", deck_id: 4},
+  { front: "Se despierta", back: "Wakes up", deck_id: 4},
+  { front: "to step down", back: "bajar", deck_id: 4},
+  { front: "to cook", back: "cocinar", deck_id: 4},
+  { front: "to talk/converse", back: "conversar", deck_id: 4},
+  { front: "to cooperate", back: "cooperar", deck_id: 4},
+  { front: "to draw", back: "dibujar", deck_id: 4},
+  { front: "noon", back: "mediodia", deck_id: 4},
+  { front: "never", back: "nunca", deck_id: 4},
+  { front: "breakfast", back: "desayuno", deck_id: 4},
+  { front: "relatives", back: "los parientes", deck_id: 4},
+  { front: "plus (5+5)", back: "mas", deck_id: 4},
+  { front: "january", back: "enero", deck_id: 4},
+  { front: "To mix", back: "mezclar", deck_id: 4},
+  { front: "Grass", back: "pasto", deck_id: 4},
+  { front: "Love it!", back: "me encanta", deck_id: 4},
+  { front: "Break (I need a)", back: "descanso", deck_id: 4},
 
+  ###### German #######
+  { front: "auffällig", back: "noticable", deck_id: 5},
+  { front: "behfümt", back: "famous", deck_id: 5},
+  { front: "bunt", back: "colorful", deck_id: 5},
+  { front: "dünn", back: "thin", deck_id: 5},
+  { front: "that's a colleague of mine over there", back: "Das ist ein Kollege von mir da drüben", deck_id: 5},
+  { front: "What is your colleague's name", back: "Vie heißt Ihr Kollege?", deck_id: 5},
+  { front: "His name's Wyatt Rudnicki", back: "Er heißt Wyatt Rudnicki", deck_id: 5},
+  { front: "Is he American? Or German?", back: "Ist er Amerikaner? Oder Deutscher?", deck_id: 5},
+  { front: "Where does he live?", back: "Wo wohnt er?", deck_id: 5},
+
+  ###### Dota 2 #######
+  { front: "Flying courier", back: "Get this ASAP if your mid is a bottle carrier", deck_id: 6},
+  { front: "Headdress", back: "Early game rush if you're getting harassed or you plan on getting mek", deck_id: 6},
+  { front: "Arcane boots", back: "Early game rush if you and/or your team is mana starved, or you can't get away with some other mana regen item", deck_id: 6},
+  { front: "Tranquil boots", back: "Early game rush if you're getting harassed or you plan on roaming a lot", deck_id: 6},
+  { front: "Bracer", back: "Early game rush if you're getting wrecked or already planning on getting drums", deck_id: 6},
+  { front: "Mek", back: "Early game prioritize this if: You could use the armor, Teamfights or tower pushing is happening fairly frequently at this point in the game, The enemy team has lots of aoe damage as opposed to single target burst, The enemy isn't heavy ganking or turtling, Can get it EARLY, ideally before 15 minutes it at worst before 20.", deck_id: 6},
+  { front: "What is early early game priority?", back: "Flying cour, Wards at 5 minutes for runes, RoB (if you got a ring of protection), Boots, Tp, Wand", deck_id: 6},
+  { front: "Medallion", back: "Mid game cheap: You're roaming, You're team could use more burst down damage combinations (think ta, shadow fiend, Alc), You could use mana regen", deck_id: 6},
+  { front: "Urn", back: "Mid game cheap: you're roaming, you're a strength support or you are squishy, no one else is getting it, you need to substitute a mek, want to push effectively, all for 875!", deck_id: 6},
+  { front: "Which heroes have sizable armor reducing abilities?", back: "Bristle back, Shadow fiend, Venge, Elder Titan, Ta, Naga, Alc, Razor, Slardar, Dazzle", deck_id: 6},
+  { front: "Drums", back: "Mid game cheap: You and you're team needs more mobility  , You are (almost) dying in every teamfight,   Enemy has a heavy burster who is reliant on chain burst combos or stuns (think pudge or a fed tusk)  , No one else is building one", deck_id: 6},
+  { front: "Force staff", back: "Mid game cheap: The enemy is heavily slow based and slow moving (viper, veno, drow), The enemy doesn't have a lot of blink or fast heroes - specifically QoP, sb or lycan., You and your team needs more mobility, You have a blood seeker or a kotl", deck_id: 6},
+  { front: "Euls", back: "Mid game prize: Enemy has fast or invisible gankers (think sb, clinx, shadow blade slark), The enemy has a lot of gankers in general, The enemy has a right click reliant carry (you can target this guy in Teamfights), Make sure to get this one early, Don't get if you're team needs mobility support more than disable, You need a lot of mana, Use to turn around gank attempts or to focus the initiator or the heaviest damage carry in a teamfight.", deck_id: 6},
+  { front: "Pipe", back: "Mid game prize: Enemy has heavy aoe Magic damage heroes (think any aoe nuke from an int hero), You can get it before the end of mid game, where pushing tier 3s still is next to impossible without big wipes. Use on tier 3s or big damage like lich ult/Zeus ult/Lina burst...etc", deck_id: 6},
 ])

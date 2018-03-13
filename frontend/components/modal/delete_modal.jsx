@@ -14,6 +14,10 @@ class DeleteModal extends React.Component {
     this.deleteDeck = this.deleteDeck.bind(this);
   }
 
+  componentDidMount() {
+    Modal.setAppElement('body');
+  }
+
   openModal() {
     this.setState({
       modalIsOpen: true
