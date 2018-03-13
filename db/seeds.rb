@@ -20,10 +20,10 @@ decks = Deck.create([
 
 cards = Card.create([
   { front: "Function of forgetting", back: "e^-x", deck_id: 1 },
-  { front: "What do memory champions do differently?" back: "Memory Palace - spatial areas of the brain light up when they are remembering things", deck_id: 1 },
+  { front: "What do memory champions do differently?", back: "Memory Palace - spatial areas of the brain light up when they are remembering things", deck_id: 1 },
   { front: "An example of episodic memory would be?", back: "Remembering a party on your 6th birthday", deck_id: 1 },
-  { front: "Persistence functionality" back: "Memories which contain a strong emotional response will likely be useful in the future", deck_id: 1},
-  { front: "This is the kind of info that can be given/ framed in a question after an event which alters the person's recollection of the event." back: "misinformation effect", deck_id: 1},
+  { front: "Persistence functionality", back: "Memories which contain a strong emotional response will likely be useful in the future", deck_id: 1},
+  { front: "This is the kind of info that can be given/ framed in a question after an event which alters the person's recollection of the event.", back: "misinformation effect", deck_id: 1},
   { front: "Whats the point of memory?", back: "supports making inferences which are adaptive in life circumstances and preserve metal energy.", deck_id: 1},
   { front: "Inability to recognize faces" back: "Prosopagnosia", deck_id: 1},
 
