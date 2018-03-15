@@ -17,13 +17,13 @@ Brainhacker utilizes 2 techniques scientifically proven to have maximum results 
   * Cards have modifiable spacing to customize the creation workflow.
 
 ## Card CRUD
-http://www.giphy.com/gifs/3o7WIH3PQkngShl0bK
+![Card gif](https://media.giphy.com/media/3o7WIH3PQkngShl0bK/giphy.gif)
 
 ## Deck CRUD
-http://www.giphy.com/gifs/26DMYbKvW1FmkP2X6
+![Deck gif](https://media.giphy.com/media/26DMYbKvW1FmkP2X6/giphy.gif)
 
 ## Customizable card creation workflow
-https://giphy.com/gifs/xThtamaSeVa87I5lVC
+![Custom](https://media.giphy.com/media/xThtamaSeVa87I5lVC/giphy.gif)
 
 ## Decks
 One difficulty of creating a Deck is that I need to have both a deck sidebar as well as a deck show page displaying on the browser at the same time. For this I created separate components which rendered separately at the same time through different routes, both with their appropriate slices of state. Another difficulty involved my main page's background image, which was the same as the splash of the login page. When I deleted a deck, my splash background would show, making the site appear not complete. I managed to hide a div between components which would expanded when my deck show component was deleted, in order to fill the right side of the screen with white space without the user knowing that anything had happened.
