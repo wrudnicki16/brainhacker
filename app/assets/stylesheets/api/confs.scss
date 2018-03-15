@@ -66,7 +66,7 @@
 }
 
 .notransition {
-  transition: none !important;
+  transition: none;
 }
 
 .study-buttons {
@@ -97,7 +97,7 @@
   display: block;
   font-size: 12px;
   position: absolute;
-  text-align: center;
+  left: 0;
   bottom: 10%;
 }
 
@@ -127,10 +127,6 @@
 }
 #study-5 {
   background-color: #3f8fcd;
-}
-
-#study-5 small {
-  margin-left: -5.5vw;
 }
 
 #reveal {

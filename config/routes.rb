@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :cards, only: [:show, :update, :destroy]
     resources :confs, only: [:create, :show, :index]
     get 'mastery/:id', to: 'decks#mastery'
+    resources :decks_search, only: [:index]
   end
 
 
