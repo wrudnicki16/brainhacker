@@ -1,5 +1,3 @@
-@decks.each do |deck|
-  json.set! deck.id do
-    json.extract! deck, :id, :title, :creator_id
-  end
+json.array!(@decks) do |deck|
+  json.extract! deck, :id, :title, :creator_id
 end

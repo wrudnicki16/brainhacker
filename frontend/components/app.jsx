@@ -9,6 +9,7 @@ import DeckIndexSidebarContainer from './deck/deck_index_sidebar_container';
 import DeckFormContainer from './deck/deck_form_container';
 import DeckShowContainer from './deck/deck_show_container';
 import StudyShowContainer from './study/study_show_container';
+import SearchContainer from './search/search_container';
 class App extends React.Component {
   render() {
     if (!this.props.studying) {
@@ -25,6 +26,7 @@ class App extends React.Component {
             <Switch>
               <AuthRoute path="/login" component={SessionFormContainer} />
               <AuthRoute path="/signup" component={SessionFormContainer} />
+              <Route path="/search" component={SearchContainer} />
               <ProtectedRoute path="/decks" component={DeckIndexSidebarContainer} />
               <ProtectedRoute path="/study/:deckId" component={StudyShowContainer} />
               <AuthRoute path="/" component={SessionFormContainer} />
@@ -46,6 +48,7 @@ class App extends React.Component {
             <ProtectedRoute path="/decks" component={DeckIndexSidebarContainer} />
             <ProtectedRoute path="/study/:deckId" component={StudyShowContainer} />
             <AuthRoute path="/" component={SessionFormContainer} />
+            <ProtectedRoute path="/search" component={SearchContainer} />
           </Switch>
           <Switch>
             <ProtectedRoute exact path="/decks/new" component={DeckFormContainer} />

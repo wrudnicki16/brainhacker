@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import { createConf } from './util/conf_api_util';
+import { searchDecks } from './actions/search_deck_actions';
 import Root from './components/root.jsx';
 
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.createConf = createConf;
+  window.searchDecks = searchDecks;
 
 
   const root = document.getElementById('root');
