@@ -36,20 +36,19 @@ class Search extends React.Component {
     return matches;
   }
 
-  selectDeck(event) {
-    let deck = event.currentTarget.innerText;
-    this.setState({inputVal: deck});
+  studyDeck(deck) {
+    this.props.history.push(`study/${deck.id}`);
   }
 
   render() {
     let results = this.props.decks.map((result, i) => {
       return (
-        <li key={i} onClick={(e) => this.selectDeck(e)}>{result['title']}</li>
+        <li key={i} onClick={() => this.studyDeck(result)}>{result['title']}</li>
       );
     });
     return(
-      <div>
-        <h1>Autocomplete</h1>
+      <div className='search-decks-page'>
+        <h1>Search Decks</h1>
         <div className='auto'>
           <input
             onChange={(e) => this.handleInput(e)}
