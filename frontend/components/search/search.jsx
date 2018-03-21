@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchItem from './search_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Search extends React.Component {
     let results = this.props.decks.map((result, i) => {
       return (
         <div className='search-deck-item'>
-          <li key={i}>{result['title']}</li>
+          <SearchItem key={i} searchedDeck={result} />
           <button onClick={() => this.studyDeck(result)}>Study</button>
         </div>
       );

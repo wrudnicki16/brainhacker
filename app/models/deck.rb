@@ -52,4 +52,9 @@ class Deck < ApplicationRecord
       @decks.select { |deck| deck.cards.length > 0 }
     end
   end
+
+  def findCreatorName(id)
+    user = User.find_by(id: id)
+    user.username
+  end
 end
