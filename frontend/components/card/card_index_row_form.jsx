@@ -1,6 +1,7 @@
 import React from 'react';
 import { merge } from 'lodash';
 import FontAwesome from 'react-fontawesome';
+import Textarea from 'react-textarea-autosize';
 
 class CardIndexRowForm extends React.Component {
   constructor(props) {
@@ -23,22 +24,22 @@ class CardIndexRowForm extends React.Component {
     return (
       <form className={`row-${this.props.index + 1}`}>
         <span>{this.props.index + 1}</span>
-        <textarea
+        <Textarea
           className="row-front"
           onChange={(e) => this.handleChange(e)}
           value={front}
           onBlur={() => {
             this.props.updateCard({ card: { id, front }});
           }}>
-        </textarea>
-        <textarea
+        </Textarea>
+        <Textarea
           className="row-back"
           onChange={(e) => this.handleChange(e)}
           value={back}
           onBlur={() => {
             this.props.updateCard({ card: { id, back }});
           }}>
-        </textarea>
+        </Textarea>
         <button
           onClick= {() => this.props.deleteCard(id)}>
           <FontAwesome
