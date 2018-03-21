@@ -71,7 +71,7 @@
   button {
     padding: 10px;
     cursor: pointer;
-    margin: 0 35px;
+    margin-right: 20px;
     color: #fdfdfd;
     border-radius: 5px;
     border: 1px solid #27b574;
@@ -84,6 +84,16 @@
   button:hover {
     background-color: #1e8c59;
     border: 1px solid #1e8c59;
+  }
+
+  button:first-child {
+    border: 1px solid #3f8fcd;
+    background-color: #3f8fcd;
+  }
+
+  button:first-child:hover {
+    border: 1px solid #35709d;
+    background-color: #35709d;
   }
 }
 .deck-select {

@@ -19,9 +19,14 @@ class DeckIndexSidebar extends React.Component {
           <div className="decks-sidebar">
             <div className="decks-sidebar-header">
               <h1>Decks</h1>
-              <button onClick={() => this.props.history.push("/decks/new")}>
-                <FontAwesome className="fas fa-plus" name="plus"/> Add Deck
-              </button>
+              <div className="decks-sidebar-buttons">
+                <button onClick={() => this.props.history.push("/search")}>
+                  <FontAwesome className="fas fa-search" name="search"/> Search
+                </button>
+                <button onClick={() => this.props.history.push("/decks/new")}>
+                  <FontAwesome className="fas fa-plus" name="plus"/> Add Deck
+                </button>
+              </div>
             </div>
             <div className="decks-body">
               {decks}
