@@ -17,19 +17,23 @@ class DeckForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const deck = merge({}, this.state);
-    // deck1 is in the first promise because we receive a promise from ajax on the backend with a deck as the data.
-    // action is in the second promise because we just dispatched an action with a payload to be sent to the reducer.
-    // this last "then" takes that action and redirects us to the appropriate page.
-    this.props.createDeck(deck)
-    .then((action) => {
-      let blankCard = { card: { front: "", back: "", deckId: action.payload.deck.id} };
-      this.props.createCard(blankCard);
-      this.navigageToDeckShow(action.payload.deck.id);
-    });
-    this.setState(() => {
-      return { deck: { title: ""}};
-    });
+    if (this.state.deck.title == "") {
+      this.props.history.goBack();
+    } else {
+      const deck = merge({}, this.state);
+      // deck1 is in the first promise because we receive a promise from ajax on the backend with a deck as the data.
+      // action is in the second promise because we just dispatched an action with a payload to be sent to the reducer.
+      // this last "then" takes that action and redirects us to the appropriate page.
+      this.props.createDeck(deck)
+      .then((action) => {
+        let blankCard = { card: { front: "", back: "", deckId: action.payload.deck.id} };
+        this.props.createCard(blankCard);
+        this.navigageToDeckShow(action.payload.deck.id);
+      });
+      this.setState(() => {
+        return { deck: { title: ""}};
+      });
+    }
   }
 
   handleChange(e) {
