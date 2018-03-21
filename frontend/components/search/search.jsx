@@ -43,13 +43,16 @@ class Search extends React.Component {
   render() {
     let results = this.props.decks.map((result, i) => {
       return (
-        <li key={i} onClick={() => this.studyDeck(result)}>{result['title']}</li>
+        <div className='search-deck-item'>
+          <li key={i}>{result['title']}</li>
+          <button onClick={() => this.studyDeck(result)}>Study</button>
+        </div>
       );
     });
     return(
       <div className='search-decks-page'>
-        <h1>Search Decks</h1>
         <div className='auto'>
+          <h1>Search Decks</h1>
           <input
             onChange={(e) => this.handleInput(e)}
             value={this.state.inputVal}

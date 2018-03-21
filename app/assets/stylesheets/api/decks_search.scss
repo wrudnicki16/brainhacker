@@ -1,3 +1,77 @@
 // Place all the styles related to the api/decks_search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.search-decks-page {
+  background-color: #fafafa;
+  height: calc(100vh - 59px);
+  width: 100%;
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 35px;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+}
+
+.auto {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-weight: 400;
+    width: 75%;
+    align-self: flex-start;
+  }
+
+  input {
+    width: 75%;
+    font-size: 18px;
+    color: #555;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    display: block;
+    margin-bottom: 13px;
+    background-color: #fff;
+    align-self: flex-start;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+    padding: 10px;
+    height: 20px;
+  }
+  input:focus,
+  input:active {
+    box-shadow: 0 0 8px #2b9292;
+    outline: none;
+    background-color: #eee;
+  }
+
+  ul {
+    width: 100%;
+    padding-left: unset;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+.search-deck-item {
+  width: 80%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 30px 35px;
+
+}
