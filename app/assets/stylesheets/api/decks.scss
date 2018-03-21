@@ -65,6 +65,7 @@
   height: calc(100vh - 56px);
   h1 {
     font-weight: 300;
+    color: #888;
   }
 
   button {
@@ -110,11 +111,15 @@
   background-color: #2b9292;
   color: #fff;
   cursor: pointer;
+  .deck-content-title {
+    color: #fff;
+  }
 }
 
 .deck-content-title {
   font-size: 18px;
   font-weight: 400;
+  color: #666;
 }
 
 .deck-content-first {
@@ -287,6 +292,7 @@
 }
 .deck-title-span {
   align-self: flex-start;
+  color: #777;
 }
 
 .deck-mastery {

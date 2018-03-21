@@ -23,7 +23,7 @@
   align-items: center;
 
   h1 {
-    font-weight: 400;
+    font-weight: 300;
     width: 75%;
     align-self: flex-start;
   }
@@ -71,7 +71,46 @@
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 20px 0;
   padding: 30px 35px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0,0,0, 0.5);
 
+  button {
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 10px;
+    width: 100px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #2b9292;
+    border: 1px solid #2b9292;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.5);
+  }
+
+  button:hover {
+    background-color: #257777;
+    transition: 0.2s;
+  }
+
+}
+
+.search-deck-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.search-deck-title {
+  font-size: 32px;
+  font-weight: 300;
+  color: #3f8fcd;
+  font-family: Sanchez, sans-serif;
+}
+
+.fa-chevron-right {
+  font-size: 16px;
 }

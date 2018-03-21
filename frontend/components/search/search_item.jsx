@@ -11,7 +11,7 @@ const SearchItem = ({ searchedDeck }) => {
           Cards: {searchedDeck['numCards']}
         </div>
         <div>
-          Creator: {searchedDeck['creator_id']}
+          Creator: {searchedDeck['name']}
         </div>
       </div>
     </li>

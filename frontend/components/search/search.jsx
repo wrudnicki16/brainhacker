@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchItem from './search_item';
+import FontAwesome from 'react-fontawesome';
 
 class Search extends React.Component {
   constructor(props) {
@@ -46,7 +47,12 @@ class Search extends React.Component {
       return (
         <div className='search-deck-item'>
           <SearchItem key={i} searchedDeck={result} />
-          <button onClick={() => this.studyDeck(result)}>Study</button>
+          <button onClick={() => this.studyDeck(result)}>
+            Study &nbsp;
+            <FontAwesome className="fas fa-chevron-right"
+                         name="chevron-right"
+                         size="2x"/>
+          </button>
         </div>
       );
     });
