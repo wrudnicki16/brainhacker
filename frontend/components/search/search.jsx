@@ -45,7 +45,8 @@ class Search extends React.Component {
   render() {
     let results = this.props.decks.map((result, i) => {
       return (
-        <div className='search-deck-item'>
+        <div className='search-deck-item'
+             onClick={() => this.studyDeck(result)}>
           <SearchItem key={i} searchedDeck={result} />
           <button onClick={() => this.studyDeck(result)}>
             Study &nbsp;

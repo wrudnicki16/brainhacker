@@ -98,6 +98,11 @@
 
 }
 
+.search-deck-item:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
 .search-deck-info {
   display: flex;
   flex-direction: column;
