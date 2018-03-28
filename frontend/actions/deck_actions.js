@@ -48,8 +48,10 @@ export const deleteDeck = (id) => dispatch => {
 
 export const createDeck = (deck) => dispatch => {
   return DeckAPIUtil.createDeck(deck)
-      .then((deck1) => dispatch(receiveDeck(deck1),
-            err => dispatch(receiveErrors(err.responseJSON))
+    .then(deck1 =>
+      dispatch(receiveDeck(deck1))
+      , err => (
+        dispatch(receiveErrors(err.responseJSON))
       ));
 };
 
