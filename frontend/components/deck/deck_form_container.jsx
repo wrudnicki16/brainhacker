@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { createDeck } from '../../actions/deck_actions';
 import { createCard } from '../../actions/card_actions';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state) => {
   return {
-    errors: errors.deck
+    errors: state.errors.deck
   };
 };
 

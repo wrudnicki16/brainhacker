@@ -166,7 +166,7 @@
 
 .deck-create-form {
   height: 100%;
-  width: 300%;
+  width: 1000%;
   background-color: #fff;
   color: #aaa;
   padding: 25px 50px;
@@ -181,7 +181,7 @@
     input[type="submit"] {
       align-self: flex-end;
       cursor: pointer;
-
+      margin-top: 25px;
       padding: 10px;
       width: 150px;
       margin-right: 20px;
@@ -211,6 +211,7 @@
       width: 100%;
       border: none;
       border-bottom: 1px solid #ddd;
+      margin-top: 50px;
       margin-bottom: 10px;
       height: 50px;
       outline: none;
@@ -233,7 +234,7 @@
 }
 
 .deck-show-page {
-  width: 300%;
+  width: 1000%;
   height: calc(100vh - 59px);
   background-color: #fff;
   color: #aaa;

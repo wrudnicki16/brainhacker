@@ -58,8 +58,8 @@ class DeckForm extends React.Component {
     return (
       <div className="deck-create-form">
         <form>
-          {this.renderErrors()}
           <input type="submit" onClick={(e) => this.handleSubmit(e)} value="Done"/>
+          {this.renderErrors()}
           <input type="text"
             placeholder="Title your deck"
             autoFocus
