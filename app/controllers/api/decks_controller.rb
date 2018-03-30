@@ -28,8 +28,16 @@ class Api::DecksController < ApplicationController
 
   def destroy
     @deck = Deck.find_by(id: params[:id])
-    @deck.destroy
-    render :show
+    if @deck
+      if @deck.creator_id == current_user.id
+        @deck.destroy
+        render :show
+      else
+        render json: ["That deck isn't yours!"], status: 422
+      end
+    else
+      render json: ['Deck not found'], status: 404
+    end
 
   end
 

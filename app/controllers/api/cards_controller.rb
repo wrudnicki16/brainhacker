@@ -5,14 +5,14 @@ class Api::CardsController < ApplicationController
     @card = Card.new(card_create_params)
     @card.deck_id = params[:deck_id]
 
-    if @card.deck.id == current_user.id
+    if @card.deck.creator_id == current_user.id
       if @card.save
         render :show
       else
-        render json: ["Can't edit this deck"]
+        render json: @card.errors.full_messages, status: 422
       end
     else
-      render json: @card.errors.full_messages, status: 422
+      render json: ["Can't edit this deck"], status: 422
     end
   end
 

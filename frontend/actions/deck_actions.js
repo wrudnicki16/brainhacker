@@ -43,7 +43,8 @@ export const removeDeck = (deckId) => {
 
 export const deleteDeck = (id) => dispatch => {
   return DeckAPIUtil.deleteDeck(id)
-      .then(() => dispatch(removeDeck(id)));
+      .then(() => dispatch(removeDeck(id)))
+      .fail(err => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const createDeck = (deck) => dispatch => {
@@ -66,4 +67,8 @@ export const fetchDecks = () => dispatch => {
 export const getMastery = (id) => dispatch => {
   return DeckAPIUtil.getMastery(id)
       .then((deck) => dispatch(receiveMastery(deck)));
+};
+
+export const clearErrors = error => dispatch => {
+  return dispatch(receiveErrors([]));
 };

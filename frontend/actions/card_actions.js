@@ -46,12 +46,14 @@ export const fetchCard = (id) => dispatch => {
 
 export const deleteCard = (id) => dispatch => {
   return CardAPIUtil.deleteCard(id)
-      .then(() => dispatch(removeCard(id)));
+      .then(() => dispatch(removeCard(id)))
+      .fail(err => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const createCard = (payload) => dispatch => {
   return CardAPIUtil.createCard(payload)
-      .then((card1) => dispatch(receiveCard(card1)));
+      .then((card1) => dispatch(receiveCard(card1)))
+      .fail(err => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const updateCard = (payload) => dispatch => {

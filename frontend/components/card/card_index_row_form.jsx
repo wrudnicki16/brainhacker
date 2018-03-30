@@ -20,16 +20,25 @@ class CardIndexRowForm extends React.Component {
   }
 
   handleUpdate(id, front) {
-    this.props.updateCard({ card: { id, front }});
-    setTimeout(() => {
-      var x = document.getElementsByClassName("toast")[this.props.index];
-      console.log("x", x);
-      // Add the "show" class to DIV
-      x.className = "toast show";
-      setTimeout(function () { x.className = x.className.replace("toast show", "toast hidden"); }, 3000);
-  
-        // After 3 seconds, remove the show class from DIV
-    }, 500);
+    this.props.updateCard({ card: { id, front }})
+    .then(action => {
+      return
+    }, err => this.asyncToast());
+  }
+
+  handleDelete(id) {
+    this.props.deleteCard(id)
+    .then(action => {
+      return
+    }, err => this.asyncToast());
+  }
+
+  asyncToast() {
+      let toast = document.getElementsByClassName("toast")[this.props.index];
+      if (toast) {
+        toast.className = "toast show";
+        setTimeout(function () { toast.className = toast.className.replace("toast show", "toast hidden"); }, 3000);
+      }
   }
 
   renderErrors() {
@@ -74,7 +83,7 @@ class CardIndexRowForm extends React.Component {
           }}>
         </Textarea>
         <button
-          onClick= {() => this.props.deleteCard(id)}>
+          onClick= {() => this.handleDelete(id)}>
           <FontAwesome
             className="fas fa-minus-circle"
             name="minus-circle"

@@ -18,6 +18,34 @@ class DeleteModal extends React.Component {
     Modal.setAppElement('body');
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.deckId !== newProps.deckId) {
+      this.props.clearErrors();
+    }
+  }
+
+  asyncToast() {
+    let toast = document.getElementsByClassName("deck-toast")[0];
+    if (toast) {
+      toast.className = "deck-toast show";
+      setTimeout(function () { toast.className = toast.className.replace("deck-toast show", "deck-toast hidden"); }, 3000);
+    }
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {
+          this.props.errors.map((error, i) => (
+            <li className="deck-toast hidden" key={`error-${i}`}>
+              {error}
+            </li>
+          ))
+        }
+      </ul>
+    );
+  }
+
   openModal() {
     this.setState({
       modalIsOpen: true
@@ -36,7 +64,10 @@ class DeleteModal extends React.Component {
 
   deleteDeck() {
     const { deleteDeck, deckId } = this.props;
-    deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
+    this.closeModal();
+    deleteDeck(deckId)
+    .then(() => this.props.history.push("/decks"),
+          err => this.asyncToast()); // maybe use a selector here to find the most recent last deck.
   }
 
   render() {
@@ -63,6 +94,7 @@ class DeleteModal extends React.Component {
             <button onClick={this.deleteDeck}>Delete!</button>
           </div>
         </Modal>
+        {this.renderErrors()}
       </div>
     );
   }
