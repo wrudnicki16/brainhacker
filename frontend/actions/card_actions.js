@@ -4,6 +4,7 @@ export const RECEIVE_CARDS = "RECEIVE_CARDS";
 export const RECEIVE_CARD = "RECEIVE_CARD";
 export const REMOVE_CARD = "REMOVE_CARD";
 export const UPDATE_CARD = "UPDATE_CARD";
+export const RECEIVE_CARD_ERRORS = "RECEIVE_CARD_ERRORS";
 
 export const receiveCards = (cards) => {
   return {
@@ -25,6 +26,13 @@ export const removeCard = (cardId) => {
     cardId
   };
 };
+
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_CARD_ERRORS,
+    errors
+  }
+}
 
 export const fetchCards = (deckId) => dispatch => {
   return CardAPIUtil.fetchCards(deckId)
@@ -48,5 +56,10 @@ export const createCard = (payload) => dispatch => {
 
 export const updateCard = (payload) => dispatch => {
   return CardAPIUtil.updateCard(payload)
-      .then((card1) => dispatch(receiveCard(card1)));
+      .then((card1) => dispatch(receiveCard(card1)))
+      .fail(err => dispatch(receiveErrors(err.responseJSON)));
+};
+
+export const clearErrors = error => dispatch => {
+  return dispatch(receiveErrors([]));
 };

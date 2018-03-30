@@ -5,8 +5,12 @@ class Api::CardsController < ApplicationController
     @card = Card.new(card_create_params)
     @card.deck_id = params[:deck_id]
 
-    if @card.save
-      render :show
+    if @card.deck.id == current_user.id
+      if @card.save
+        render :show
+      else
+        render json: ["Can't edit this deck"]
+      end
     else
       render json: @card.errors.full_messages, status: 422
     end
@@ -35,7 +39,7 @@ class Api::CardsController < ApplicationController
         render json: @card.errors.full_messages
       end
     else
-      render json: ['Card belongs to another user'], status: 422
+      render json: ["Can't edit this deck"], status: 422
     end
   end
 
@@ -45,7 +49,7 @@ class Api::CardsController < ApplicationController
       @card.destroy
       render :show
     else
-      render json: ['Card belongs to another user'], status: 422
+      render json: ["Can't edit this deck"], status: 422
     end
   end
 

@@ -19,6 +19,39 @@ class CardIndexRowForm extends React.Component {
     }
   }
 
+  handleUpdate(id, front) {
+    this.props.updateCard({ card: { id, front }});
+    setTimeout(() => {
+      var x = document.getElementsByClassName("toast")[this.props.index];
+      console.log("x", x);
+      // Add the "show" class to DIV
+      x.className = "toast show";
+      setTimeout(function () { x.className = x.className.replace("toast show", "toast hidden"); }, 3000);
+  
+        // After 3 seconds, remove the show class from DIV
+    }, 500);
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {
+          this.props.errors.map((error, i) => (
+            <li className="toast hidden" key={`error-${i}`}>
+              {error}
+            </li>
+          ))
+        }
+      </ul>
+    );
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.deckId !== nextProps.match.deckId) {
+      this.props.clearErrors();
+    }
+  }
+
   render() {
     const { id, front, back } = this.state.card;
     return (
@@ -29,7 +62,7 @@ class CardIndexRowForm extends React.Component {
           onChange={(e) => this.handleChange(e)}
           value={front}
           onBlur={() => {
-            this.props.updateCard({ card: { id, front }});
+            this.handleUpdate(id, front);
           }}>
         </Textarea>
         <Textarea
@@ -37,7 +70,7 @@ class CardIndexRowForm extends React.Component {
           onChange={(e) => this.handleChange(e)}
           value={back}
           onBlur={() => {
-            this.props.updateCard({ card: { id, back }});
+            this.handleUpdate(id, back);
           }}>
         </Textarea>
         <button
@@ -47,6 +80,7 @@ class CardIndexRowForm extends React.Component {
             name="minus-circle"
             size="2x"/>
         </button>
+        {this.renderErrors()}
       </form>
     );
   }

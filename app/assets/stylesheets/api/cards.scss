@@ -77,3 +77,45 @@
 .cards-header-row {
   border-bottom: 2px solid #ddd;
 }
+
+.toast {
+  color: #fff;
+  position: fixed;
+  top: 200px;
+  right: 50px;
+  list-style: none;
+  background-color: #3f8fcd;
+  padding: 20px 35px;
+  border-radius: 5px;
+}
+
+.toast.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s, bounceUp 2s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s, bounceUp 2s;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
