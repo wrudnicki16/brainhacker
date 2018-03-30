@@ -23,17 +23,17 @@ class CardIndexRowForm extends React.Component {
     this.props.updateCard({ card: { id, front }})
     .then(action => {
       return
-    }, err => this.displayToast());
+    }, err => this.displayErrorToast());
   }
 
   handleDelete(id) {
     this.props.deleteCard(id)
     .then(action => {
       return
-    }, err => this.displayToast());
+    }, err => this.displayErrorToast());
   }
 
-  displayToast() {
+  displayErrorToast() {
       let toast = document.getElementsByClassName("toast")[this.props.index];
       if (toast) {
         toast.className = "toast show";

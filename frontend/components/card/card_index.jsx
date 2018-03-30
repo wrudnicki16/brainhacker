@@ -14,7 +14,7 @@ class CardIndex extends React.Component {
     }
   }
 
-  displayToast() {
+  displayErrorToast() {
     let toast = document.getElementsByClassName("toast")[0];
     if (toast) {
       toast.className = "toast show";
@@ -26,7 +26,7 @@ class CardIndex extends React.Component {
     this.props.createCard(card)
     .then(action => {
       return
-    }, err => this.displayToast());
+    }, err => this.displayErrorToast());
   }
 
   renderErrors() {

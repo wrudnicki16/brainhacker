@@ -24,7 +24,7 @@ class DeleteModal extends React.Component {
     }
   }
 
-  displayToast() {
+  displayErrorToast() {
     let toast = document.getElementsByClassName("deck-toast")[0];
     if (toast) {
       toast.className = "deck-toast show";
@@ -67,7 +67,7 @@ class DeleteModal extends React.Component {
     this.closeModal();
     deleteDeck(deckId)
     .then(() => this.props.history.push("/decks"),
-          err => this.displayToast()); // maybe use a selector here to find the most recent last deck.
+          err => this.displayErrorToast()); // maybe use a selector here to find the most recent last deck.
   }
 
   render() {
