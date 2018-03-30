@@ -14,19 +14,19 @@ class CardIndex extends React.Component {
     }
   }
 
-  asyncToast() {
-      let toast = document.getElementsByClassName("toast")[0];
-      if (toast) {
-        toast.className = "toast show";
-        setTimeout(function () { toast.className = toast.className.replace("toast show", "toast hidden"); }, 3000);
-      }
+  displayToast() {
+    let toast = document.getElementsByClassName("toast")[0];
+    if (toast) {
+      toast.className = "toast show";
+      setTimeout(function () { toast.className = toast.className.replace("toast show", "toast hidden"); }, 3000);
+    }
   }
 
   handleCreate(card) {
     this.props.createCard(card)
     .then(action => {
       return
-    }, err => this.asyncToast());
+    }, err => this.displayToast());
   }
 
   renderErrors() {
