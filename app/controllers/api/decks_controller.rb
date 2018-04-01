@@ -33,7 +33,7 @@ class Api::DecksController < ApplicationController
         @deck.destroy
         render :show
       else
-        render json: ["That deck isn't yours!"], status: 422
+        render json: ["That deck isn't yours!"], status: 401
       end
     else
       render json: ['Deck not found'], status: 404

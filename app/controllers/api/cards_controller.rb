@@ -12,7 +12,7 @@ class Api::CardsController < ApplicationController
         render json: @card.errors.full_messages, status: 422
       end
     else
-      render json: ["Can't edit this deck"], status: 422
+      render json: ["Can't edit this deck"], status: 401
     end
   end
 
@@ -39,7 +39,7 @@ class Api::CardsController < ApplicationController
         render json: @card.errors.full_messages
       end
     else
-      render json: ["Can't edit this deck"], status: 422
+      render json: ["Can't edit this deck"], status: 401
     end
   end
 
@@ -49,7 +49,7 @@ class Api::CardsController < ApplicationController
       @card.destroy
       render :show
     else
-      render json: ["Can't edit this deck"], status: 422
+      render json: ["Can't edit this deck"], status: 401
     end
   end
 
