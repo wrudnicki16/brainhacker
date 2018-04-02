@@ -32,6 +32,7 @@ class DeckShow extends React.Component {
         <div className="deck-mastery">Mastery: {`${deck.mastery_score}%`}</div>
         <div className="deck-cards-divider"></div>
         <CardIndexContainer />
+        <span id="saved-toast" className="hidden">Saved!</span>
       </div>
     ) : (
         <div className="deck-show-page"></div>

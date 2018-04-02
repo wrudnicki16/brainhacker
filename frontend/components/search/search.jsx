@@ -48,12 +48,9 @@ class Search extends React.Component {
         <div className='search-deck-item'
              onClick={() => this.studyDeck(result)}>
           <SearchItem key={i} searchedDeck={result} />
-          <button>
-            Study &nbsp;
             <FontAwesome className="fas fa-chevron-right"
                          name="chevron-right"
                          size="2x"/>
-          </button>
         </div>
       );
     });

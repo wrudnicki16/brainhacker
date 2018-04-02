@@ -19,10 +19,10 @@ class CardIndexRowForm extends React.Component {
     }
   }
 
-  handleUpdate(id, front) {
-    this.props.updateCard({ card: { id, front }})
+  handleUpdate(id, value, side) {
+    this.props.updateCard({ card: { id, [side]: value }})
     .then(action => {
-      return
+      this.displaySaveToast();
     }, err => this.displayErrorToast());
   }
 
@@ -33,12 +33,20 @@ class CardIndexRowForm extends React.Component {
     }, err => this.displayErrorToast());
   }
 
+  displaySaveToast() {
+    let toast = document.getElementById("saved-toast");
+    if (toast) {
+      toast.className = "show";
+      setTimeout(function () { toast.className = toast.className.replace("show", "hidden"); }, 3000);
+    }
+  }
+
   displayErrorToast() {
-      let toast = document.getElementsByClassName("toast")[this.props.index];
-      if (toast) {
-        toast.className = "toast show";
-        setTimeout(function () { toast.className = toast.className.replace("toast show", "toast hidden"); }, 3000);
-      }
+    let toast = document.getElementsByClassName("toast")[this.props.index];
+    if (toast) {
+      toast.className = "toast show";
+      setTimeout(function () { toast.className = toast.className.replace("toast show", "toast hidden"); }, 3000);
+    }
   }
 
   renderErrors() {
@@ -71,7 +79,7 @@ class CardIndexRowForm extends React.Component {
           onChange={(e) => this.handleChange(e)}
           value={front}
           onBlur={() => {
-            this.handleUpdate(id, front);
+            this.handleUpdate(id, front, "front");
           }}>
         </Textarea>
         <Textarea
@@ -79,7 +87,7 @@ class CardIndexRowForm extends React.Component {
           onChange={(e) => this.handleChange(e)}
           value={back}
           onBlur={() => {
-            this.handleUpdate(id, back);
+            this.handleUpdate(id, back, "back");
           }}>
         </Textarea>
         <button

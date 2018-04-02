@@ -70,11 +70,13 @@
   background-color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 20px 0;
   padding: 30px 35px;
   overflow: hidden;
   flex-wrap: wrap;
   box-shadow: 0 2px 4px rgba(0,0,0, 0.5);
+  position: relative;
 
   button {
     margin: 20px 0;
@@ -116,5 +118,6 @@
 }
 
 .fa-chevron-right {
-  font-size: 16px;
+  position: absolute;
+  right: 20px;
 }

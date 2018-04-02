@@ -82,18 +82,22 @@
   font-size: 17px;
 }
 
-.toast, .deck-toast {
+.toast, .deck-toast, #saved-toast {
   color: #fff;
   position: fixed;
   top: 70px;
   left: 50%;
   list-style: none;
   background-color: rgba(206, 73, 62, 0.9);
-  padding: 20px 35px;
+  padding: 15px 30px;
   border-radius: 5px;
 }
 
-.toast.show, .deck-toast.show {
+#saved-toast {
+  background-color: rgba(56, 133, 193, 0.9);
+}
+
+.toast.show, .deck-toast.show, #saved-toast.show {
   visibility: visible;
   /* Show the snackbar */
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
