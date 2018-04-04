@@ -7,23 +7,64 @@ class StudyShow extends React.Component {
     super(props);
     this.state = {
       curIdx: 0,
-      flipped: false
+      flipped: false,
+      speaking: true
     };
     this.switchSidesWithTransition = this.switchSidesWithTransition.bind(this);
     this.flip = this.flip.bind(this);
   }
 
-  flip() {
-    const { flipped } = this.state;
+  flip(curIdx = null) {
+    const { flipped, speaking } = this.state;
+    const { cards, deck } = this.props;
     this.setState({
-      flipped: !flipped
+      flipped: !flipped,
+      speaking: !speaking // temp value
     });
+    let currentlySpeaking = !speaking;
+    let back;
+    if (curIdx !== null) {
+      back = cards[curIdx].back;
+    }
+
+    // this line for some reason loads the voices so when I set them to a variable
+    // in the timeout the voices are there. Otherwise code is buggy, don't understand why.
+    speechSynthesis.getVoices(); 
+
+    if (speaking && curIdx !== null) {
+      let msg = new SpeechSynthesisUtterance();
+      setTimeout(() => {
+        msg.voiceURI = 'native';
+        msg.text = back;
+        [msg.voice, msg.lang] = this.chooseVoiceAndLang(deck.title);
+        if (msg.voice || msg.lang !== "null") {
+          window.speechSynthesis.speak(msg)
+        }
+      }, 200);
+    }
   }
 
-  switchSidesWithTransition(transition) {
+  chooseVoiceAndLang(deckName) {
+    let voices = window.speechSynthesis.getVoices();
+    
+    if ((/(spanish)/g.exec(deckName.toLowerCase()) ||
+        (/(español)/g.exec(deckName.toLowerCase())))) {
+          return [voices[voices.length - 15], 'es-ES'];
+
+    } else if (/(german)/g.exec(deckName.toLowerCase()) ||
+               /(deutsch)/g.exec(deckName.toLowerCase())) {
+                 return [voices[voices.length - 19], 'de-DE'];
+    } else {
+      return [null, null];
+    }    
+  }
+
+  switchSidesWithTransition(transition, curIdx = null) {
     const { flipped } = this.state;
+    const { cards } = this.props;
     let card = document.getElementById("check");
     let flipper = document.getElementById("flipper");
+
     if (transition) {
       card.checked = !flipped;
     } else {
@@ -34,7 +75,7 @@ class StudyShow extends React.Component {
       }, 3);
     }
 
-    this.flip();
+    this.flip(curIdx);
   }
 
   studyCard(score) {
@@ -83,7 +124,7 @@ class StudyShow extends React.Component {
         <div className="study-prompt">
           <p>&nbsp;</p>
           <div className="study-buttons">
-            <button id="reveal" onClick={() => this.switchSidesWithTransition(true)}>
+            <button id="reveal" onClick={() => this.switchSidesWithTransition(true, curIdx)}>
               Reveal Answer
             </button>
           </div>
@@ -111,7 +152,7 @@ class StudyShow extends React.Component {
           <div className="study-card">
             <label className="card-show">
               <input id="check" type="checkbox"
-                onClick={() => this.flip()} />
+                onClick={() => this.flip(curIdx)} />
             	<div id="flipper" className="flipper">
             		<div className="front">
                   { cards[curIdx].front }

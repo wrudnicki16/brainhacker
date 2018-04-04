@@ -130,6 +130,10 @@
   font-size: 18px;
   font-weight: 400;
   color: #666;
+  white-space: nowrap;
+  width: 310px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .deck-content-first {
@@ -304,6 +308,7 @@
 .deck-title-span {
   align-self: flex-start;
   color: #777;
+  white-space: nowrap;
 }
 
 .deck-mastery {

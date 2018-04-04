@@ -64,10 +64,12 @@
 }
 
 .study-title {
-  // background-color: #1c6161; #0a7575 #2b9292
   align-self: stretch;
   background-color: #4e4e4e;
   padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .study-title span {
