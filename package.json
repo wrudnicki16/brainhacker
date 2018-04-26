@@ -33,7 +33,7 @@
     "start": "webpack --watch",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "postinstall": "webpack"
+    "postinstall": "webpack -p"
   },
   "engines": {
     "node": "6.10.1",
