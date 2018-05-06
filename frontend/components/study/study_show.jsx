@@ -95,6 +95,7 @@ class StudyShow extends React.Component {
   }
 
   handleKeydown(e) {
+    const { deck } = this.props;
     const { curIdx, flipped } = this.state;
     if (flipped) {
       if (e.keyCode > 48 && e.keyCode < 54) {
@@ -104,6 +105,9 @@ class StudyShow extends React.Component {
     }
     if (e.keyCode === 32) {
       this.switchSidesWithTransition(true, curIdx);
+    }
+    if (e.keyCode === 27) {
+      this.props.history.push(`/decks/${deck.id}`)
     }
   }
 
