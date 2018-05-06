@@ -5,10 +5,6 @@ import CardIndexContainer from '../card/card_index_container';
 import DeleteModalContainer from '../modal/delete_modal_container';
 
 class DeckShow extends React.Component {
-  componentDidMount() {
-    const { deckId, decks } = this.props;
-  }
-
   deleteDeck(deck) {
     const { deleteDeck, deckId, decks } = this.props;
     deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
