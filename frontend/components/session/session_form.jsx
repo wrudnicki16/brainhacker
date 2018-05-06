@@ -94,7 +94,8 @@ class SessionForm extends React.Component {
               onChange={(e) => this.handleChange(e)}
               value={this.state.user.username}
               placeholder="Username"
-              className="login-input" />
+              className="login-input"
+              autoFocus />
             <input type="password"
               onChange={(e) => this.handleChange(e)}
               value={this.state.user.password}

@@ -61,7 +61,8 @@ class Search extends React.Component {
           <input
             onChange={(e) => this.handleInput(e)}
             value={this.state.inputVal}
-            placeholder='Search decks...'/>
+            placeholder='Search decks...'
+            autoFocus />
           <ul>
             {results}
           </ul>

@@ -80,7 +80,8 @@ class CardIndexRowForm extends React.Component {
           value={front}
           onBlur={() => {
             this.handleUpdate(id, front, "front");
-          }}>
+          }}
+          autoFocus>
         </Textarea>
         <Textarea
           className="row-back"
