@@ -94,9 +94,28 @@ class StudyShow extends React.Component {
     }, 100);
   }
 
+  handleKeydown(e) {
+    const { curIdx, flipped } = this.state;
+    if (flipped) {
+      if (e.keyCode > 48 && e.keyCode < 54) {
+        let cardNum = e.keyCode - 48;
+        this.studyCard(cardNum);
+      }
+    }
+    if (e.keyCode === 32) {
+      this.switchSidesWithTransition(true, curIdx);
+    }
+  }
+
   componentDidMount() {
     const { fetchDeck, deckId } = this.props;
     fetchDeck(deckId);
+    document.addEventListener('keydown', (e) => this.handleKeydown(e));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', (e) => this.handleKeydown(e));
+    console.log('unmounted!');
   }
 
   render() {
