@@ -12,6 +12,7 @@ class StudyShow extends React.Component {
     };
     this.switchSidesWithTransition = this.switchSidesWithTransition.bind(this);
     this.flip = this.flip.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this);
   }
 
   flip(curIdx = null) {
@@ -114,12 +115,11 @@ class StudyShow extends React.Component {
   componentDidMount() {
     const { fetchDeck, deckId } = this.props;
     fetchDeck(deckId);
-    document.addEventListener('keydown', (e) => this.handleKeydown(e));
+    document.addEventListener('keydown', this.handleKeydown);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', (e) => this.handleKeydown(e));
-    console.log('unmounted!');
+    document.removeEventListener('keydown', this.handleKeydown);
   }
 
   render() {
