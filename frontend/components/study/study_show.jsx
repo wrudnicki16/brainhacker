@@ -12,7 +12,7 @@ class StudyShow extends React.Component {
     };
     this.switchSidesWithTransition = this.switchSidesWithTransition.bind(this);
     this.flip = this.flip.bind(this);
-    this.handleKeydown = this.handleKeydown.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this); // added to avoid arrow function issues when removing event listeners.
   }
 
   flip(curIdx = null) {

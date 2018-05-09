@@ -3,8 +3,14 @@ import FontAwesome from 'react-fontawesome';
 import CardIndexRowFormContainer from './card_index_row_form_container';
 
 class CardIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addBlankOnTab = this.addBlankOnTab.bind(this); // added to avoid arrow function issues when removing event listeners.
+  }
+
   componentDidMount() {
     this.props.fetchCards(this.props.deckId);
+    document.addEventListener('keydown', this.addBlankOnTab);
   }
 
   componentWillReceiveProps(newProps) {
@@ -41,6 +47,26 @@ class CardIndex extends React.Component {
         }
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.addBlankOnTab);
+  }
+
+  addBlankOnTab(e) {
+    if (e.keyCode === 9) {
+      let lastCardBack = document.querySelector('.cards-body')
+        .lastElementChild.lastElementChild
+        .previousElementSibling.previousElementSibling;
+      if (lastCardBack === document.activeElement) {
+        this.addBlank();
+      }
+    }
+  }
+
+  addBlank() {
+    let blankCard = { card: { front: "", back: "", deckId: this.props.deckId } };
+    this.props.createCard(blankCard);
   }
   
   render() {
