@@ -56,6 +56,30 @@
   }
 }
 
+.visible-xs {
+  visibility: hidden;
+}
+
+.class-list {
+  width: 100%;
+  background-color: #f0ad4e;
+  position: fixed;
+  top: 59px;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  z-index: 999;
+  outline: none;
+  padding: 6px 12px;
+  color: #fff;
+  border: 1px solid #ec971f;
+}
+
+.class-list:hover {
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+
 .decks-sidebar {
   color: #aaa;
   background-color: #eee;
@@ -313,4 +337,60 @@
 
 .deck-mastery {
   margin: 20px 0px;
+}
+
+.app {
+  overflow-x: hidden;
+}
+
+@media (max-width: 815px) {
+
+  .main-page-decks {
+    width: 100%;
+    position: fixed;
+    display: block;
+    visibility: hidden;
+  }
+
+  .deck-content {
+    width: 100%;
+  }
+
+  .decks-sidebar-header {
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+  }
+
+  .visible-xs {
+    visibility: visible;
+  }
+
+  .deck-show-page {
+    padding: 25px 10px;
+    position: relative;
+  }
+
+  .deck-title {
+    display: block;
+    height: inherit;
+  }
+
+  .deck-delete {
+    position: absolute;
+    top: 10px;
+    right: 3px;
+  }
+
+  .cards-index form {
+    padding: 15px 0;
+
+    button {
+      position: absolute;
+      right: 3px;
+    }
+  }
+
+  .row-front {
+    margin-right: 3vw;
+  }
 }

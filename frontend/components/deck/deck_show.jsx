@@ -10,11 +10,27 @@ class DeckShow extends React.Component {
     deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
   }
 
+  hideDeckShow() {
+    let deckShow = document.getElementsByClassName(".deck-show-page");
+    console.log(this);
+    console.log(deckShow);
+    deckShow.hidden = true;
+    this.style
+  }
+
   render() {
     const { deleteDeck, decks, deckId } = this.props;
     let deck = decks[deckId];
     return deck ? (
       <div className="deck-show-page">
+        <button class="class-list visible-xs"
+          onClick={() => this.hideDeckShow()}>
+            <span class="caret"></span>
+              &nbsp;
+              Class List
+              &nbsp;
+            <span class="caret"></span>
+        </button>
         <div className="deck-header">
           <div className="deck-title">
             <DeleteModalContainer />
