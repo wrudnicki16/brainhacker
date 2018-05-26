@@ -14,25 +14,15 @@ json.confs do
   @deck.cards.each do |card|
     json.set! card.id do
       if !card.confs.empty?
-        json.extract! card.confs
+        confs = card.confs
           .where(tester_id: current_user.id)
           .order("created_at desc")
-          .limit(1)[0], :id, :score, :card_id, :tester_id
+          .limit(1)[0]
+        # was giving an error for when there weren't any confs for this user - id doesn't exist for nil
+        if !!confs
+          json.extract! confs, :id, :score, :card_id, :tester_id
+        end
       end
     end
   end
 end
-
-# json.numCards @deck.cards.length
-
-# how do we get the latest confs here?
-# do we need confs or mastery score?
-
-# json.master_score @deck.mastery_score(current_user.id)
-# json.confs do
-#   @deck.cards.each do |card|
-#     card.confs.each do |conf|
-#
-#     end
-#   end
-# end
