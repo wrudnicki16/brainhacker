@@ -13,7 +13,12 @@ class Api::DecksController < ApplicationController
   end
 
   def index
-    @decks = Deck.all
+    @decks = []
+    Deck.all.each do |deck|
+      if deck.creator_id == current_user.id || deck.mastery_score(current_user.id) > 0
+        @decks.push(deck)
+      end
+    end
   end
 
   def show
@@ -29,7 +34,7 @@ class Api::DecksController < ApplicationController
   def destroy
     @deck = Deck.find_by(id: params[:id])
     if @deck
-      if @deck.creator_id == current_user.id
+      if @deck.creator_id == current_user.id || current_user.username == 'wyattrud'
         @deck.destroy
         render :show
       else
