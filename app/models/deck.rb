@@ -49,8 +49,10 @@ class Deck < ApplicationRecord
     query = "%#{query_param.downcase}%"
     if query_param != ""
       @decks = Deck.where("lower(title) LIKE ?", query).limit(10)
-      @decks.select { |deck| deck.cards.length > 0 }
+    else
+      @decks = Deck.all
     end
+    @decks.select { |deck| deck.cards.length > 0 }
   end
 
   def findCreatorName(id)

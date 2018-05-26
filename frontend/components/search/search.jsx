@@ -10,6 +10,10 @@ class Search extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.searchDecks(this.state.inputVal);
+  }
+
   handleInput(event) {
     this.setState({inputVal: event.currentTarget.value}, this.updateSearch);
   }
