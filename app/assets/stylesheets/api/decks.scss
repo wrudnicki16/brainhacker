@@ -279,9 +279,6 @@
 .deck-header {
   font-size: 40px;
   font-weight: 300;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
 
 }
@@ -294,6 +291,9 @@
   color: #555;
   cursor: pointer;
   background-color: rgba(0,0,0,0);
+  position: absolute;
+  right: 18px;
+  top: 42px;
 }
 
 .deck-study {
@@ -323,10 +323,7 @@
 }
 
 .deck-title {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-
+  margin-top: 5vh;
 }
 .deck-title-span {
   align-self: flex-start;
@@ -352,7 +349,6 @@
 @media (max-width: 815px) {
 
   .main-page-decks {
-    width: 100%;
     position: fixed;
     display: block;
   }
@@ -371,18 +367,22 @@
   }
 
   .deck-show-page {
-    padding: 45px 5vw;
+    padding: 6vh 5vw;
     position: relative;
   }
 
-  .deck-title {
+  .deck-header {
     display: block;
+  }
+
+  .deck-title {
     height: inherit;
+    margin-top: 1vh;
   }
 
   .deck-delete {
     position: absolute;
-    top: 20px;
+    top: 3vh;
     right: 2vw;
   }
 
