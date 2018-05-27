@@ -275,7 +275,7 @@
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-
+  position: relative;
 }
 
 .deck-header {
@@ -294,8 +294,8 @@
   cursor: pointer;
   background-color: rgba(0,0,0,0);
   position: absolute;
-  right: 18px;
-  top: 42px;
+  right: 3vw;
+  top: 11px;
 }
 
 .deck-study {
@@ -349,54 +349,53 @@
 }
 
 @media (max-width: 815px) {
-
+  
   .main-page-decks {
     position: fixed;
     display: block;
   }
-
+  
   .deck-content {
     width: 100%;
   }
-
+  
   .decks-sidebar-header {
     justify-content: space-between;
     padding: 0 0 0 20px;
   }
-
+  
   .visible-xs {
     visibility: visible;
   }
-
+  
   .deck-show-page {
-    padding: 6vh 5vw;
-    position: relative;
+    padding: 7vh 5vw;
   }
-
+  
   .deck-header {
     display: block;
   }
-
+  
   .deck-title {
     height: inherit;
     margin-top: 1vh;
   }
-
+  
   .deck-delete {
     position: absolute;
-    top: 3vh;
+    top: 4vh;
     right: 2vw;
   }
-
+  
   .cards-index form {
     padding: 15px 0;
-
+    
     button {
       position: absolute;
       right: 4vw;
     }
   }
-
+  
   .row-front {
     margin-right: 3vw;
   }
@@ -406,11 +405,5 @@
   .decks-sidebar-header {
     justify-content: space-around;
     padding: 0;
-  }
-}
-
-@media (max-width: 350px) {
-  header {
-    padding: 3px 2vw;
   }
 }

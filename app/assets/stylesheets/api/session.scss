@@ -202,3 +202,35 @@ header {
   }
 
 }
+
+@media (max-width: 650px) {
+  .nav-greeting p {
+    display: none;
+  }
+  .nav-greeting a {
+    display: none;
+  }
+  .nav-greeting button {
+    margin: 0 2vw 0 0;
+  }
+}
+
+@media (max-width: 385px) {
+  .nav-logo {
+    padding: 8px 5px;
+  }
+  header {
+    padding: 3px 0;
+  }
+}
+
+@media (max-width: 350px) {
+  header h1 {
+    margin: 0 10px;
+  }
+
+  .nav-logo-img {
+    height: 30px;
+    width: 45px;
+  }
+}
