@@ -68,7 +68,6 @@
   left: 0;
   right: 0;
   border-radius: 0;
-  z-index: 999;
   outline: none;
   padding: 6px 12px;
   color: #fff;
@@ -340,7 +339,14 @@
 }
 
 .app {
+  // putting overflow hidden over the entire page prevents weird 
+  // whitespace issues for vw strategy,
+  // but also covers up nav buttons. At least it looks good!
   overflow-x: hidden;
+}
+
+.on-top {
+  z-index: 999;
 }
 
 @media (max-width: 815px) {
@@ -349,7 +355,6 @@
     width: 100%;
     position: fixed;
     display: block;
-    visibility: hidden;
   }
 
   .deck-content {
@@ -392,5 +397,18 @@
 
   .row-front {
     margin-right: 3vw;
+  }
+}
+
+@media (max-width: 325px) {
+  .decks-sidebar-header {
+    justify-content: space-around;
+    padding: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  header {
+    padding: 3px 2vw;
   }
 }

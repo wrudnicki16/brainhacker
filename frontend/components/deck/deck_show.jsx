@@ -11,11 +11,12 @@ class DeckShow extends React.Component {
   }
 
   hideDeckShow() {
-    let deckShow = document.getElementsByClassName(".deck-show-page");
-    console.log(this);
-    console.log(deckShow);
-    deckShow.hidden = true;
-    this.style
+    let deckShow = document.getElementsByClassName("deck-show-page")[0];
+    let mainPageDecks = document.getElementsByClassName("main-page-decks")[0];
+    let classList = document.getElementsByClassName("class-list")[0];
+    deckShow.classList.remove("on-top");
+    mainPageDecks.classList.add("on-top");
+    classList.classList.remove("on-top");
   }
 
   render() {
