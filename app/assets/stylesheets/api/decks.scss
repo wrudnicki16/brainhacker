@@ -72,6 +72,7 @@
   padding: 6px 12px;
   color: #fff;
   border: 1px solid #ec971f;
+  z-index: 1;
 }
 
 .class-list:hover {
@@ -198,6 +199,7 @@
   color: #aaa;
   padding: 25px 50px;
   box-sizing: border-box;
+  z-index: 999;
 
   form {
     display: flex;
