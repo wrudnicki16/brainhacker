@@ -101,12 +101,14 @@ class SessionForm extends React.Component {
               value={this.state.user.password}
               placeholder="Password"
               className="login-input" />
-            <input type="submit"
-              onClick={(e) => this.handleSubmit(e)}
-              value="Login" />
-            <input type="submit"
-              onClick={(e) => this.handleDemoUser(e)}
-              value="Demo"/>
+            <div className="login-buttons">
+              <input type="submit"
+                onClick={(e) => this.handleSubmit(e)}
+                value="Login" />
+              <input type="submit"
+                onClick={(e) => this.handleDemoUser(e)}
+                value="Demo"/>
+            </div>
             {this.navLink()}
           </form>
         </div>
