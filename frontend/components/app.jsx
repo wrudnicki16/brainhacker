@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     if (!this.props.studying) {
       return (
-        <div class="app">
+        <div className="app">
           <header>
             <div className="nav-logo">
               <Link to="/decks" className="nav-logo-img" />
