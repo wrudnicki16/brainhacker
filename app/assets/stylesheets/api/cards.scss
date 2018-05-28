@@ -129,3 +129,33 @@ However, delay the fade out process for 2.5 seconds */
 .hidden {
   visibility: hidden;
 }
+
+@media (max-width: 425px) {
+  .cards-index Textarea {
+    font-size: 12px;
+    padding: 7px 8px;
+  }
+
+  .cards-header {
+    font-size: 18px;
+  }
+
+  .cards-header a {
+    font-size: 14px;
+  }
+
+  .fa-minus-circle {
+    font-size: 1.5em;
+  }
+
+  .cards-index form {
+    padding: 15px 0;
+    span:first-child {
+      font-size: 12px;
+    }
+
+    span:last-child {
+      font-size: 1.5em;
+    }
+  }
+}

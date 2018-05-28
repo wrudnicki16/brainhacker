@@ -407,6 +407,31 @@
   }
 }
 
+@media (max-width: 425px) {
+  .fa-5x {
+    font-size: 4em;
+  }
+
+  .deck-header {
+    font-size: 25px;
+  }
+
+  .deck-study {
+    margin-top: 15px;
+    width: 85px;
+    font-size: 15px;
+  }
+
+  .deck-mastery {
+    margin: 10px 0;
+    font-size: 12px;
+  }
+
+  .deck-cards-divider {
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 325px) {
   .decks-sidebar-header {
     justify-content: space-around;
