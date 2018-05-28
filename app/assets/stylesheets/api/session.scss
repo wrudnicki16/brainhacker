@@ -244,8 +244,12 @@ header {
           justify-content: space-between;
         }
       }
+      h1:first-child {
+        margin-top: 0.67em;
+      }
     }
   }
+
 }
 
 @media (max-width: 650px) {
@@ -261,14 +265,21 @@ header {
 }
 
 @media (max-width: 425px) {
-  .login-page-header {
-    h1 {
-      font-size: 1.3em;
-    }
-    p {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      font-size: 0.8em;
+  .main-page {
+    .login-page-header {
+      h1 {
+        font-size: 1.3em;
+      }
+  
+      h1:first-child {
+        margin-top: 1.5em;
+      }
+  
+      p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 0.8em;
+      }
     }
   }
 }
