@@ -134,3 +134,60 @@
   color: #2b9292;
   background-color: #ccc;
 }
+
+@media (max-width: 815px) {
+  .study-show-page {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .study-card {
+    justify-content: space-between;
+  }
+
+  .card-show {
+    margin: 0;
+  }
+
+  .card-show,
+  .front,
+  .back {
+    width: 100vw;
+    height: calc(76vh - 55px);
+  }
+
+  .front,
+  .back {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .study-buttons {
+    width: 100vw;
+    margin-top: calc(7vh - 13px);
+  }
+
+  .study-buttons button {
+    height: 15vh;
+  }
+  
+  .study-prompt {
+    margin-bottom: 0;
+  }
+
+  .study-prompt p {
+    margin-top: 2vh;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  .study-buttons button {
+    font-size: 18px;
+  }
+
+  .study-buttons small {
+    font-size: 9px;
+    bottom: 12%;
+  }
+}
