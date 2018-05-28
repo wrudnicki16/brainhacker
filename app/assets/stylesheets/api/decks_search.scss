@@ -10,10 +10,9 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 35px;
+  padding: 1vh 0;
   box-sizing: border-box;
   overflow-y: auto;
-
 }
 
 .auto {
@@ -26,6 +25,7 @@
     font-weight: 300;
     width: 75%;
     align-self: flex-start;
+    margin: 2vh 0;
   }
 
   input {
@@ -120,4 +120,34 @@
 .fa-chevron-right {
   position: absolute;
   right: 20px;
+}
+
+@media (max-width: 815px) {
+  .auto {
+    width: 95%;
+
+    h1 {
+      font-size: 20px;
+      margin: 1vh 0;
+    }
+
+    input {
+      width: 95%;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 0;
+      padding: 7px;
+      height: 15px;
+    }
+  }
+
+  .search-deck-item {
+    width: 95%;
+    margin: 10px 0;
+    padding: 15px 17px;
+  }
+
+  .search-deck-title {
+    font-size: 20px;
+  }
 }
