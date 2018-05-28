@@ -56,6 +56,30 @@
   }
 }
 
+.visible-xs {
+  visibility: hidden;
+}
+
+.class-list {
+  width: 100%;
+  background-color: #f0ad4e;
+  position: fixed;
+  top: 59px;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+  outline: none;
+  padding: 6px 12px;
+  color: #fff;
+  border: 1px solid #ec971f;
+  z-index: 1;
+}
+
+.class-list:hover {
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+
 .decks-sidebar {
   color: #aaa;
   background-color: #eee;
@@ -175,6 +199,7 @@
   color: #aaa;
   padding: 25px 50px;
   box-sizing: border-box;
+  z-index: 999;
 
   form {
     display: flex;
@@ -250,15 +275,12 @@
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-
+  position: relative;
 }
 
 .deck-header {
   font-size: 40px;
   font-weight: 300;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
 
 }
@@ -271,6 +293,9 @@
   color: #555;
   cursor: pointer;
   background-color: rgba(0,0,0,0);
+  position: absolute;
+  right: 3vw;
+  top: 11px;
 }
 
 .deck-study {
@@ -300,10 +325,7 @@
 }
 
 .deck-title {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-
+  margin-top: 5vh;
 }
 .deck-title-span {
   align-self: flex-start;
@@ -313,4 +335,75 @@
 
 .deck-mastery {
   margin: 20px 0px;
+}
+
+.app {
+  // putting overflow hidden over the entire page prevents weird 
+  // whitespace issues for vw strategy,
+  // but also covers up nav buttons. At least it looks good!
+  overflow-x: hidden;
+}
+
+.on-top {
+  z-index: 999;
+}
+
+@media (max-width: 815px) {
+  
+  .main-page-decks {
+    position: fixed;
+    display: block;
+  }
+  
+  .deck-content {
+    width: 100%;
+  }
+  
+  .decks-sidebar-header {
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+  }
+  
+  .visible-xs {
+    visibility: visible;
+  }
+  
+  .deck-show-page {
+    padding: 7vh 5vw;
+  }
+  
+  .deck-header {
+    display: block;
+  }
+  
+  .deck-title {
+    height: inherit;
+    margin-top: 1vh;
+  }
+  
+  .deck-delete {
+    position: absolute;
+    top: 4vh;
+    right: 2vw;
+  }
+  
+  .cards-index form {
+    padding: 15px 0;
+    
+    button {
+      position: absolute;
+      right: 4vw;
+    }
+  }
+  
+  .row-front {
+    margin-right: 3vw;
+  }
+}
+
+@media (max-width: 325px) {
+  .decks-sidebar-header {
+    justify-content: space-around;
+    padding: 0;
+  }
 }

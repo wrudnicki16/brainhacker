@@ -84,3 +84,16 @@
 ul {
   margin: 0;
 }
+@media (max-width: 450px) {
+  .Modal {
+    width: 370px;
+    height: 275px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Modal {
+    width: 310px;
+    height: 300px;
+  }
+}
