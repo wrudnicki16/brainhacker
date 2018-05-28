@@ -13,10 +13,10 @@ class DeckShow extends React.Component {
   hideDeckShow() {
     let deckShow = document.getElementsByClassName("deck-show-page")[0];
     let mainPageDecks = document.getElementsByClassName("main-page-decks")[0];
-    let classList = document.getElementsByClassName("class-list")[0];
+    let deckList = document.getElementsByClassName("deck-list")[0];
     deckShow.classList.remove("on-top");
     mainPageDecks.classList.add("on-top");
-    classList.classList.remove("on-top");
+    deckList.classList.remove("on-top");
   }
 
   render() {
@@ -24,7 +24,7 @@ class DeckShow extends React.Component {
     let deck = decks[deckId];
     return deck ? (
       <div className="deck-show-page">
-        <button className="class-list visible-xs"
+        <button className="deck-list visible-xs"
           onClick={() => this.hideDeckShow()}>
             <span className="caret"></span>
               &nbsp;

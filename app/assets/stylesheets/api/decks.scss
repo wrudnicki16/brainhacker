@@ -60,11 +60,11 @@
   visibility: hidden;
 }
 
-.class-list {
+.deck-list {
   width: 100%;
   background-color: #f0ad4e;
-  position: fixed;
-  top: 59px;
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
   border-radius: 0;
@@ -75,7 +75,7 @@
   z-index: 1;
 }
 
-.class-list:hover {
+.deck-list:hover {
   background-color: #ec971f;
   border-color: #d58512;
 }
