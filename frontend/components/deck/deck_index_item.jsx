@@ -9,10 +9,10 @@ class DeckIndexItem extends React.Component {
     if (document.documentElement.offsetWidth < 815) {
       let deckShow = document.getElementsByClassName("deck-show-page")[0];
       let mainPageDecks = document.getElementsByClassName("main-page-decks")[0];
-      let deckList = document.getElementsByClassName('deck-list')[0];
+      let deckTabs = document.getElementsByClassName('deck-tabs')[0];
       deckShow.classList.add("on-top");
       mainPageDecks.classList.remove("on-top");
-      deckList.classList.add("on-top");
+      deckTabs.classList.add("on-top");
     }
   }
 

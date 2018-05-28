@@ -60,7 +60,7 @@
   visibility: hidden;
 }
 
-.deck-list {
+.deck-tabs {
   width: 100%;
   background-color: #f0ad4e;
   position: absolute;
@@ -75,7 +75,7 @@
   z-index: 1;
 }
 
-.deck-list:hover {
+.deck-tabs:hover {
   background-color: #ec971f;
   border-color: #d58512;
 }
