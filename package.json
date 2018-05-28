@@ -30,7 +30,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
+    "start": "webpack --mode development --watch",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "postinstall": "webpack -p"

@@ -24,13 +24,13 @@ class DeckShow extends React.Component {
     let deck = decks[deckId];
     return deck ? (
       <div className="deck-show-page">
-        <button class="class-list visible-xs"
+        <button className="class-list visible-xs"
           onClick={() => this.hideDeckShow()}>
-            <span class="caret"></span>
+            <span className="caret"></span>
               &nbsp;
               Class List
               &nbsp;
-            <span class="caret"></span>
+            <span className="caret"></span>
         </button>
         <div className="deck-header">
           <div className="deck-title">

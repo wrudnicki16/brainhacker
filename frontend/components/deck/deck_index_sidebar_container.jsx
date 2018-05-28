@@ -6,8 +6,11 @@ import { withRouter } from 'react-router-dom';
 
 
 const mapStateToProps = (state, ownProps) => {
+  let url = ownProps.location.pathname;
+  let activeDeck = url.includes('/decks/') ? parseInt(url.slice(7)) : 0;
   return {
-    decks: Object.values(state.entities.decks)
+    decks: Object.values(state.entities.decks),
+    activeDeck
   };
 };
 
@@ -17,7 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(DeckIndexSidebar);
+)(DeckIndexSidebar));

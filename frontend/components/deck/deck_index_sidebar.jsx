@@ -12,8 +12,9 @@ class DeckIndexSidebar extends React.Component {
   }
 
   render() {
+    let activeDeck = this.props.activeDeck;
     if (this.props) {
-      let decks = this.props.decks.map((deck) => <DeckIndexItem key={deck.id} deck={deck} />);
+      let decks = this.props.decks.map((deck) => <DeckIndexItem key={deck.id} deck={deck} activeDeck={deck.id === activeDeck}/>);
       return (
         <div className="main-page-decks">
           <div className="decks-sidebar">
@@ -29,9 +30,9 @@ class DeckIndexSidebar extends React.Component {
               </div>
             </div>
             <div className="decks-body">
-              {decks}
+                {decks}
+              </div>
             </div>
-          </div>
           <div className="splash-overlay"><i className="fa fa-arrow-left"></i> &nbsp; &nbsp; View, Create Decks</div>
         </div>
       );

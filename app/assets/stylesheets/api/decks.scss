@@ -133,17 +133,19 @@
   justify-content: flex-start;
   align-items: flex-start;
   color: #777;
-  width: 355px;
+  width: 339px;
   height: 110px;
   transition-duration: 0.15s;
   list-style: none;
   padding: 15px 28px;
   box-sizing: border-box;
+  border: 3px solid rgba(0, 0, 0, 0);
 }
 
 .deck-content:hover {
   background-color: #2b9292;
   color: #fff;
+  border-color: #2b9292;
   cursor: pointer;
   .deck-content-title {
     color: #fff;
@@ -335,6 +337,10 @@
 
 .deck-mastery {
   margin: 20px 0px;
+}
+
+.selected {
+  border: 3px solid #ddd;
 }
 
 .app {
