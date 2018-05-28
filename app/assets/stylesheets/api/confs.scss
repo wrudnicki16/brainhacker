@@ -183,11 +183,15 @@
 
 @media (max-width: 425px) {
   .study-buttons button {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .study-buttons small {
     font-size: 9px;
     bottom: 12%;
+  }
+
+  .study-buttons button {
+    height: 10vh;
   }
 }
