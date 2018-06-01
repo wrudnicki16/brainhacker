@@ -73,6 +73,7 @@
   color: #fff;
   border: 1px solid #ec971f;
   z-index: 1;
+  height: 27px; // need to declare a height, or safari will be off by a few pixels.
 }
 
 .deck-tabs:hover {
