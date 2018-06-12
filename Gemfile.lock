@@ -116,7 +116,7 @@ GEM
     rack (2.0.3)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
-    rack-timeout (0.5.0.1)
+    rack-timeout (0.5.1)
     rails (5.1.4)
       actioncable (= 5.1.4)
       actionmailer (= 5.1.4)
@@ -218,4 +218,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

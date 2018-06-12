@@ -3,8 +3,26 @@ import FontAwesome from 'react-fontawesome';
 import { Redirect } from 'react-router';
 import CardIndexContainer from '../card/card_index_container';
 import DeleteModalContainer from '../modal/delete_modal_container';
+import Loader from '../loading';
 
 class DeckShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ loading: false });
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.deckId !== newProps.deckId) {
+      this.setState({ loading: true });
+    }
+  } 
+
   deleteDeck(deck) {
     const { deleteDeck, deckId, decks } = this.props;
     deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
@@ -21,8 +39,9 @@ class DeckShow extends React.Component {
 
   render() {
     const { deleteDeck, decks, deckId } = this.props;
-    let deck = decks[deckId];
-    return deck ? (
+    let deck;
+    JSON.stringify(decks) !== '{}' ? deck = decks[deckId] : deck;
+    return deck && !this.state.loading ? (
       <div className="deck-show-page">
         <button className="deck-tabs visible-xs"
           onClick={() => this.hideDeckShow()}>
@@ -48,7 +67,9 @@ class DeckShow extends React.Component {
         <span id="saved-toast" className="hidden">Saved!</span>
       </div>
     ) : (
-        <div className="deck-show-page"></div>
+        <div className="deck-show-page">
+          <Loader />
+        </div>
     );
   }
 }
