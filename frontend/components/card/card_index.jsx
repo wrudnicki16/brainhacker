@@ -82,24 +82,23 @@ class CardIndex extends React.Component {
       return <CardIndexRowFormContainer card={card} key={card.id} index={i}/>;
     });
     return !this.state.loading ? (
-        <div className="cards-index">
-          <div className="cards-header">
-            Cards:
-            <a
-              onClick={() => this.handleCreate(blankCard)}>
-              <FontAwesome className="fas fa-plus-circle" name="plus-circle"/>
-              &nbsp;Add Card
-            </a>
-            <div className="cards-header-row"></div>
-          </div>
-          <div className="cards-body">
-            <div className="cards-body-header"></div>
-            {cards}
-          </div>
-          {this.renderErrors()}
+      <div className="cards-index">
+        <div className="cards-header">
+          Cards:
+          <a
+            onClick={() => this.handleCreate(blankCard)}>
+            <FontAwesome className="fas fa-plus-circle" name="plus-circle"/>
+            &nbsp;Add Card
+          </a>
+          <div className="cards-header-row"></div>
         </div>
-      )
-    : (
+        <div className="cards-body">
+          <div className="cards-body-header"></div>
+          {cards}
+        </div>
+        {this.renderErrors()}
+      </div>
+    ) : (
       <div className="cards-index">
         <Loader />
       </div>
