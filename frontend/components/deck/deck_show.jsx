@@ -17,12 +17,6 @@ class DeckShow extends React.Component {
     this.setState({ loading: false });
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.deckId !== newProps.deckId) {
-      this.setState({ loading: true });
-    }
-  } 
-
   deleteDeck(deck) {
     const { deleteDeck, deckId, decks } = this.props;
     deleteDeck(deckId).then(() => this.props.history.push("/decks")); // maybe use a selector here to find the most recent last deck.
