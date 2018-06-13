@@ -1,17 +1,20 @@
 import React from 'react';
 import SearchItem from './search_item';
 import FontAwesome from 'react-fontawesome';
+import Loader from '../loading';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputVal: ''
+      inputVal: '',
+      loading: true,
     };
   }
 
   componentDidMount() {
     this.props.searchDecks(this.state.inputVal);
+    this.setState({ loading: false });
   }
 
   handleInput(event) {
@@ -19,7 +22,10 @@ class Search extends React.Component {
   }
 
   updateSearch() {
-    this.props.searchDecks(this.state.inputVal);
+    this.setState({ loading: true });
+    this.props.searchDecks(this.state.inputVal).then(() => {
+      this.setState({ loading: false });
+    });
   }
 
   matches() {
@@ -47,18 +53,25 @@ class Search extends React.Component {
   }
 
   render() {
-    let results = this.props.decks.map((result, i) => {
-      return (
-        <div className='search-deck-item'
-             onClick={() => this.studyDeck(result)}>
-          <SearchItem key={result.id} searchedDeck={result} />
-            <FontAwesome className="fas fa-chevron-right"
-                         name="chevron-right"
-                         size="2x"/>
-        </div>
-      );
-    });
-    return(
+    let results = !this.state.loading ? (
+      this.props.decks.map((result, i) => {
+        return (
+          <div className='search-deck-item'
+              onClick={() => this.studyDeck(result)}>
+            <SearchItem key={result.id} searchedDeck={result} />
+              <FontAwesome className="fas fa-chevron-right"
+                          name="chevron-right"
+                          size="2x"/>
+          </div>
+        );
+      })
+    ) : (
+      <div className="search-decks-page">
+        <Loader />
+      </div>
+    )
+
+    return (
       <div className='search-decks-page'>
         <div className='auto'>
           <h1>Search Decks</h1>

@@ -1,22 +1,29 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import CardIndexRowFormContainer from './card_index_row_form_container';
-
+import Loader from '../loading';
 class CardIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    }
     this.addBlankOnTab = this.addBlankOnTab.bind(this); // added to avoid arrow function issues when removing event listeners.
   }
 
   componentDidMount() {
     this.props.fetchCards(this.props.deckId);
     document.addEventListener('keydown', this.addBlankOnTab);
+    this.setState({ loading: false });
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.deckId !== newProps.deckId) {
-      this.props.fetchCards(newProps.match.params.deckId);
+      this.setState({ loading: true });
       this.props.clearErrors();
+      this.props.fetchCards(newProps.match.params.deckId).then(() => {
+        this.setState( { loading: false })
+      });
     }
   }
 
@@ -74,7 +81,7 @@ class CardIndex extends React.Component {
     let cards = this.props.cards.map((card, i) => {
       return <CardIndexRowFormContainer card={card} key={card.id} index={i}/>;
     });
-    return (
+    return !this.state.loading ? (
       <div className="cards-index">
         <div className="cards-header">
           Cards:
@@ -90,6 +97,10 @@ class CardIndex extends React.Component {
           {cards}
         </div>
         {this.renderErrors()}
+      </div>
+    ) : (
+      <div className="cards-index">
+        <Loader />
       </div>
     );
   }
