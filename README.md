@@ -48,6 +48,9 @@ My cards, in order to update appropriately without a submit button, needed to up
 ## Study Deck
 Having a live progress bar was tricky at first, as I had to decide whether or not to keep progress in the component's state or send it from the back end. I didn't want to send it from the back end as that would be theoretically slower than leaving that process to the front end, but I figured accuracy was more important than speed in this case, so I decided to ping the database instead. However, if scalability became an issue I would probably change this.
 
+## Personalized
+When you start out as a new user, you don't have any personal decks, but you can quickly either make your own deck or familiarize yourself with the decks available to you created by other Brainhacker users. However, to make it clear that you can only look and not touch, I added a toast feature which will indicate which decks are yours to edit or not, this will be indicated when you try to edit a card or delete a deck that isn't yours. So you can customize your home page to only include decks that you have either studied before or have created yourself.
+
 ## Keeping code DRY
 I am always trying to keep code dry when developing, abstracting information in the form of helper methods and partials so I avoid repeated code, making my code readable for both myself and my peers.
 
