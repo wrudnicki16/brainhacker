@@ -15,6 +15,23 @@ Brainhacker utilizes 2 techniques scientifically proven to have maximum results 
 * Create your own decks for you and others to study
   * Can modify cards in deck to be studied.
   * Cards have modifiable spacing to customize the creation workflow.
+* Study all cards in a deck
+  * Rate your confidence level for each of the cards on a 1-5 scale.
+  * Track your progress for a particular deck.
+  * Watch a cool flip animation.
+* Search decks
+  * Uses an autocomplete mechanism for searching.
+  * Shows all decks by default.
+
+## Minor Features
+* Text to Speech
+  * Uses Google's Speech Synthesis Web API
+  * Parses deck names, Ex: Contains "Spanish" or "Español", reads 
+    the back side of the card in the specified language (for a select few).
+* Toast
+  * Indicates whether or not you can edit a specific deck.
+* Mobile Responsive
+  * Works on both Safari and Chrome.
 
 ## Card CRUD
 ![Card gif](https://media.giphy.com/media/3o7WIH3PQkngShl0bK/giphy.gif)
@@ -28,6 +45,9 @@ One difficulty of creating a Deck is that I need to have both a deck sidebar as 
 ## Cards
 My cards, in order to update appropriately without a submit button, needed to update as you typed. However, this would bog down the server if you updated on a keystroke, so I decided to update `onBlur()`, giving my input updating appropriate speed.
 
+## Study Deck
+Having a live progress bar was tricky at first, as I had to decide whether or not to keep progress in the component's state or send it from the back end. I didn't want to send it from the back end as that would be theoretically slower than leaving that process to the front end, but I figured accuracy was more important than speed in this case, so I decided to ping the database instead. However, if scalability became an issue I would probably change this.
+
 ## Keeping code DRY
 I am always trying to keep code dry when developing, abstracting information in the form of helper methods and partials so I avoid repeated code, making my code readable for both myself and my peers.
 
@@ -35,13 +55,7 @@ I am always trying to keep code dry when developing, abstracting information in 
 
 ## Future Features
 
-* Study decks, rate confidence for each term
-* Search by deck or tag
 * Tags
-* Progress Bar - shows current mastery of deck
-* Animate card flip
-* Most recent decks studied show up on home page
 * Make edit deck its own page with a card sidebar and expanded card edit
 * Upload Media
 * Deck icons
-* Text-to-speech
