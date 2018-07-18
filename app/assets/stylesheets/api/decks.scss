@@ -96,7 +96,8 @@
   button {
     padding: 10px;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 5px;
+    font-size: 16px;
     color: #fdfdfd;
     border-radius: 5px;
     border: 1px solid #27b574;
@@ -114,6 +115,7 @@
   button:first-child {
     border: 1px solid #3f8fcd;
     background-color: #3f8fcd;
+    margin-right: 12px;
   }
 
   button:first-child:hover {
@@ -165,12 +167,10 @@
 
 .deck-content-first {
   margin-top: 10px;
-  font-size: 12px;
 }
 
 .deck-list {
   margin-top: 5px;
-  font-size: 12px;
 }
 
 .deck-divider {
@@ -420,12 +420,10 @@
   .deck-study {
     margin-top: 15px;
     width: 85px;
-    font-size: 15px;
   }
 
   .deck-mastery {
     margin: 10px 0;
-    font-size: 12px;
   }
 
   .deck-cards-divider {
