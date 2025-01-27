@@ -10,7 +10,7 @@ class DeckShow extends React.Component {
     super(props);
     this.state = {
       loading: true
-    }
+    };
   }
 
   componentDidMount() {
@@ -39,11 +39,11 @@ class DeckShow extends React.Component {
       <div className="deck-show-page">
         <button className="deck-tabs visible-xs"
           onClick={() => this.hideDeckShow()}>
-            <span className="caret"></span>
-              &nbsp;
-              Deck List
-              &nbsp;
-            <span className="caret"></span>
+          <span className="caret"></span>
+          &nbsp;
+          Deck List
+          &nbsp;
+          <span className="caret"></span>
         </button>
         <div className="deck-header">
           <div className="deck-title">
@@ -51,8 +51,8 @@ class DeckShow extends React.Component {
             <span className="deck-title-span">{deck.title}</span>
           </div>
           <button onClick={() => this.props.history.push(`/study/${deckId}`)}
-                  className="deck-study">
-                  Study
+            className="deck-study">
+            Study
           </button>
         </div>
         <div className="deck-mastery">Mastery: {`${deck.mastery_score}%`}</div>
@@ -61,9 +61,9 @@ class DeckShow extends React.Component {
         <span id="saved-toast" className="hidden">Saved!</span>
       </div>
     ) : (
-        <div className="deck-show-page">
-          <Loader />
-        </div>
+      <div className="deck-show-page">
+        <Loader />
+      </div>
     );
   }
 }
