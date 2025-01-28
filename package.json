@@ -31,9 +31,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode development --watch",
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production",
+    "start": "webpack --env.NODE_ENV=development --watch",
+    "dev": "webpack --env.NODE_ENV=development --watch",
+    "build": "webpack --env.NODE_ENV=production",
     "postinstall": "webpack -p"
   },
   "engines": {
