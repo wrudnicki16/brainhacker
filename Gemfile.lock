@@ -120,6 +120,7 @@ GEM
     erubi (1.13.1)
     execjs (2.10.0)
     ffi (1.17.1-x86_64-darwin)
+    ffi (1.17.1-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -164,6 +165,8 @@ GEM
       net-protocol
     nio4r (2.7.4)
     nokogiri (1.15.7-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.7-x86_64-linux)
       racc (~> 1.4)
     pg (1.5.9)
     pp (0.6.2)
@@ -274,6 +277,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   annotate
