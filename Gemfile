@@ -17,6 +17,8 @@ gem 'puma', '~> 6.0'
 gem 'sprockets-rails', '>= 3.2.2'
 
 gem 'sassc-rails', '>= 2.1.2'
+# Use Terser as compressor for JavaScript assets
+gem 'terser'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
