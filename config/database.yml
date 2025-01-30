@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: brain_hacker_production
-  username: brain_hacker
-  password: <%= ENV['BRAIN_HACKER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
