@@ -37,8 +37,8 @@
     "postinstall": "webpack -p"
   },
   "engines": {
-    "node": "22.x",
-    "npm": "8.x"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   },
   "repository": {
     "type": "git",
