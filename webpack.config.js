@@ -4,7 +4,7 @@ module.exports = {
   context: __dirname,
   entry: "./frontend/brainhacker.jsx",
   output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'builds'),
+    path: path.resolve(__dirname, 'public', 'assets'),
     filename: "bundle.js"
   },
   module: {
